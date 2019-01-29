@@ -69,20 +69,51 @@ public class UserstateMachine {
 				case 4:
 					getUserInfo(userInfoHash, buffer, "userPW", 4);
 					break;
+				//데이타웨어 유저 아이디
 				case 5:
 					getUserInfo(userInfoHash, buffer, "datawareUserId", 5);
 					break;
+				//스키마 아이디
 				case 6:
 					getUserInfo(userInfoHash, buffer, "schemaId", 6);
 					break;
+				//커넥션 객체 생성 
 				case 7:
 					logger.info("Start connect to PD");
 					//PD(AR)서버로 접속하여 RD(2번 째 데이터 베이스)의 접속 정보 조회
 					JdbcProxyHandler.connectPD(userInfoHash);
-					//RD(두번 째 데이터 베이스) 접속 하여 정보 조회
+					//RD(두번 째 데이터 베이스)접속 하여 정보 조회
 					JdbcProxyHandler.connect();
-					userState = 8;
+					userState = 9;
 					break;
+				//case 8 종료
+				//RD로 쿼리문 보내기
+				case 9 : 
+					logger.info("RD connection success.");
+					System.out.println("You can query to DB!");
+					System.out.println("==========================================");
+					System.out.println("Insert your query : ");
+					String query = buffer.readLine();
+					while(true) {
+	
+						isCommand(query);
+						if(userState ==0 || userState ==8) {
+							break;
+						}
+						else if(query.charAt(query.length()-1)==';') {
+							//쿼리문 보내기
+							query = query.replace(";","");
+							System.out.println(query);
+							JdbcProxyHandler.getQueryToUser(query);
+							query = "";
+							System.out.println("==========================================");
+							System.out.println("Insert your query : ");
+							query = buffer.readLine();
+						}else {
+							//쿼리문 연결하기 
+							query += " " + buffer.readLine();
+						}
+					}
 				}
 			  //유저가 입력한 정보가 잘못되거나 조회한 내용이 없을 때
 			} catch (SQLException e) {
@@ -168,13 +199,16 @@ public class UserstateMachine {
 			System.out.println("           Restart JDBC Proxy");
 			System.out.println("==========================================");
 			userState = 0;
+			return;
 		} else if (userInput.equals("exit")) {
 			System.out.println("==========================================");
 			System.out.println("                  exit");
 			System.out.println("==========================================");
 			userState = 8;
+			return;
 		} else {
 			userState++;
+			return;
 		}
 	}
 }

@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Properties;
@@ -31,40 +32,38 @@ import de.simplicit.vjdbc.util.Util;
 */
 public class JdbcProxyHandler {
 
-	/*
-	 * 생성자
+	/* 생성자
+	 * 
 	 */
 	public JdbcProxyHandler() {
 
 	}
 
-	/*
-	 * connection 객체
+	/* connection 객체
+	 * 
 	 */
-	public static Connection conn;
-	/*
-	 * DBConnection 클래스의 로그 객체
+	private static Connection conn;
+	/* DBConnection 클래스의 로그 객체
+	 * 
 	 */
 	private static Logger logger = Logger.getLogger(JdbcProxyHandler.class.getName());
-	/*
-	 * 유저에게 입력받은 정보를 저장할 propertise 객체
+	/* 유저에게 입력받은 정보를 저장할 propertise 객체
+	 * 
 	 */
 	private static Properties prop;
-	/*
-	 * 프리페어스테이먼트 객체
+	/* 프리페어스테이먼트 객체
+	 * 
 	 */
 	private static PreparedStatement pre;
 
-	/*
-	 * 2번 째 DB에 연결시도를 하는 메소드
+	/* 2번 째 DB에 연결시도를 하는 메소드
+	 * 
 	 * 
 	 * @param Connection connInfo 유저의 정보와 접속을 원하는 DB정보를 담은 데이터
-	 * 
 	 * @return Connection dbconn DB연결 상태 저장하는 필드 멤버
 	 */
 	public static void connect() throws ClassNotFoundException, SQLException {
-		// log4j.properties lo4j설정 파일 찾는 구문
-		PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure("log4j.properties"); // log4j.properties lo4j설정 파일 찾는 구문
 		logger.info("connect start ");
 		
 		conn = null;
@@ -84,10 +83,40 @@ public class JdbcProxyHandler {
 			throw new SQLException();
 		}
 		logger.info(conn.getMetaData() + " ");
+		System.out.println(conn.getMetaData());
+	}
+	
+	public static void getQueryToUser(String query) throws SQLException {
+		if(conn ==null) {
+			throw new SQLException();
+		}
+		pre = null;
+		pre = conn.prepareStatement(query);
+		ResultSet rs = pre.executeQuery();
+
+		if(rs == null) {
+			System.out.println("No search data.");
+			return;
+		}
+		
+		ResultSetMetaData rsmd =rs.getMetaData();
+		
+		int colCount = rsmd.getColumnCount();
+		for(int i = 1; i < colCount; i ++ ) {
+			System.out.print(rsmd.getColumnName(i) + " ");
+		}
+		System.out.println();
+		while(rs.next()) {
+			for(int i = 1; i < colCount; i ++) {
+				
+				System.out.print(rs.getString(i) + " ");
+			}
+			System.out.println();
+		}
 	}
 
-	/*
-	 * 유저가 원하는 DB의 접속을 하기 전에 거치는 대리자 역할의 데이터베이스. Proxy Database : PD = AR
+	/* 유저가 원하는 DB의 접속을 하기 전에 거치는 대리자 역할의 데이터베이스. Proxy Database : PD = AR
+	 * 
 	 * 
 	 * 해당 DB에서 유저가 입력한 정보로 접속을 하고자 하는 DB(RD)의 접속 정보를 조회함.
 	 * 
@@ -100,32 +129,36 @@ public class JdbcProxyHandler {
 		 // 유저가 접속하는 PD(AR)서버의 주소 설정 proxy IP : 유저가 접속 할 PD(AR)서버의 아이피 주소 
 		String urlPD = "jdbc:oracle:thin:@" + prop.getProperty("proxyIp");// 192.168.1.32:1521:orcl"; 
 		
-		prop.setProperty("proxyIp", "localhost"); 			//PD proxy ip를 RD proxy ip로 변환 
+		prop.setProperty("proxyIp", "localhost"); 			//사용을 다한(위의 접속 url) 프록시 ip값을 localhost로 변환
 		
 		String userIdPD = prop.getProperty("user");			// PD의 유저 아이디
 		String userPwPD = prop.getProperty("password");		// PD의 유저 비밃번호
 		
+		//resion 사용 변수들 null로 초기화
 		String sql = null;									// 쿼리문을 저장할 스트링 객체
 		conn = null; 										// PD의 커넥션 객체
 		pre = null;											// PD의 프리페어스테이먼트
 		ResultSet rsPD = null;								// 스트링 sql의 쿼리 결과문
-
-		// 오라클 드라이버 로딩 예외처리
+		//end
+		
+		//resion 오라클 드라이버 로딩 및 예외처리
 		logger.info("Search oracle driver ");
 		if (Class.forName("oracle.jdbc.driver.OracleDriver") == null) {
 			throw new ClassNotFoundException();
 		}
-
-		// 유저의 입력 정보를 이용하여 PD(AR)에 접속하는 커넥션 객체 할당 예외처리
+		//end
+		
+		//resion 유저의 입력 정보를 이용하여 PD(AR)에 접속하는 커넥션 객체 할당 예외처리
 		logger.info("make connection instance ");
 		conn = DriverManager.getConnection(urlPD, userIdPD, userPwPD);
 		if (conn == null) {
 			throw new SQLException();
 		}
-		//PD 로그인으로 사용한 비밀번호 초기화 -> PD에서 RD 비밀번호 가져와서 디코딩하여 다시 저장
-		userPwPD = null; 
-	
-		// svr_id를 조회하기 위한 쿼리문
+		//end
+		
+		userPwPD = null; //PD 로그인으로 사용한 비밀번호 초기화 -> PD에서 RD 비밀번호 가져와서 디코딩하여 다시 저장
+		
+		//resion svr_id를 조회 
 		sql = OracleQuery.getSvr_id();
 		// SVR_ID 가져오기
 		pre = conn.prepareStatement(sql);
@@ -141,41 +174,68 @@ public class JdbcProxyHandler {
 			prop.setProperty("svrId", rsPD.getString(1));
 			logger.info("SVR ID: " + prop.getProperty("svrId") + " ");
 		}
-
-		//// Registry Port 가져오는 쿼리
-		sql = OracleQuery.getPort();
-		// Registry Port 가져오기
+		//end
+		
+		//resion password와 registry port 가져오기
+		sql = OracleQuery.getPort_pw();
 		pre = conn.prepareStatement(sql);
-		pre.setString(1, prop.getProperty("proxyIp")); // localhost가 아닐시 해당 값을 변경해주어야함.
+		pre.setString(1, prop.getProperty("proxyIp"));
 		pre.setString(2, prop.getProperty("proxyNm"));
+		pre.setString(3, prop.getProperty("schemaId"));
+		pre.setString(4, prop.getProperty("user"));
+		pre.setString(5, prop.getProperty("svrId"));
+		//예외처리
 		rsPD = pre.executeQuery();
-		// sql 조회 결과 예외 처리
-		if (rsPD == null) {
+		if(rsPD==null) {
 			throw new SQLException();
 		}
-		// 쿼리문 조회 결과 프로퍼티에 저장
-		while (rsPD.next()) {
-			// proxyPort 저장
+		while(rsPD.next()) {
 			prop.setProperty("proxyPort", rsPD.getString(1));
-			logger.info("Registry Port: " + prop.getProperty("proxyPort") + " ");
+			prop.setProperty("password", Util.AES_Decode(rsPD.getString(2))); // 암호화된 비밀번호를 디코딩하여 저장
+			
+			logger.info("Registry Port: " + rsPD.getString(1) + " ");
+			logger.info("Password: " + rsPD.getString(2)); //보안상 디코드 되지 않은 비밀번호 저장
 		}
-
-		// 암호화된 비밀번호  가져와서 디코딩 하기
-		sql = OracleQuery.getUser_pw();
-		//암호화된 비밀번호 가져오기
-		pre = conn.prepareStatement(sql);
-		pre.setString(1, prop.getProperty("svrId"));
-		pre.setString(2, prop.getProperty("schemaId"));
-		pre.setString(3, prop.getProperty("user"));
-		rsPD = pre.executeQuery();
-		// sql 조회 결과 예외 처리
-		if (rsPD == null) {
-			throw new SQLException();
-		}
-		while (rsPD.next()) {
-			prop.setProperty("password", Util.AES_Decode((rsPD.getString(1))));
-		}
+		//end
+		
+		// resion 사용하지 않는 코드
+		//		//// Registry Port 가져오는 쿼리
+		//		sql = OracleQuery.getPort();
+		//		// Registry Port 가져오기
+		//		pre = conn.prepareStatement(sql);
+		//		pre.setString(1, prop.getProperty("proxyIp")); // localhost가 아닐시 해당 값을 변경해주어야함.
+		//		pre.setString(2, prop.getProperty("proxyNm"));
+		//		rsPD = pre.executeQuery();
+		//		// sql 조회 결과 예외 처리
+		//		if (rsPD == null) {
+		//			throw new SQLException();
+		//		}
+		//		// 쿼리문 조회 결과 프로퍼티에 저장
+		//		while (rsPD.next()) {
+		//			// proxyPort 저장
+		//			prop.setProperty("proxyPort", rsPD.getString(1));
+		//			logger.info("Registry Port: " + prop.getProperty("proxyPort") + " ");
+		//		}
+		//
+		//		// 암호화된 비밀번호  가져와서 디코딩 하기
+		//		sql = OracleQuery.getUser_pw();
+		//		//암호화된 비밀번호 가져오기
+		//		pre = conn.prepareStatement(sql);
+		//		pre.setString(1, prop.getProperty("svrId"));
+		//		pre.setString(2, prop.getProperty("schemaId"));
+		//		pre.setString(3, prop.getProperty("user"));
+		//		rsPD = pre.executeQuery();
+		//		// sql 조회 결과 예외 처리
+		//		if (rsPD == null) {
+		//			throw new SQLException();
+		//		}
+		//		while (rsPD.next()) {
+		//			prop.setProperty("password", Util.AES_Decode((rsPD.getString(1))));
+		//		}
+		// end
+		conn = null;
 	}
+	
 
 	// property 접속 정보 디비 설정 메소드
 	private static void setUserProp(HashMap<String, String> userInfo) {
