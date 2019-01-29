@@ -1,1 +1,1 @@
-jdbclib/
+/jdbclib
