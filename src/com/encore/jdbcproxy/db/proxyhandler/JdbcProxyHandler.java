@@ -46,7 +46,7 @@ public class JdbcProxyHandler {
 	/* DBConnection 클래스의 로그 객체
 	 * 
 	 */
-	private static Logger logger = Logger.getLogger(JdbcProxyHandler.class.getName());
+	private static Logger logger = Logger.getLogger("prac");
 	/* 유저에게 입력받은 정보를 저장할 propertise 객체
 	 * 
 	 */
@@ -63,7 +63,7 @@ public class JdbcProxyHandler {
 	 * @return Connection dbconn DB연결 상태 저장하는 필드 멤버
 	 */
 	public static void connect() throws ClassNotFoundException, SQLException {
-		PropertyConfigurator.configure("log4j.properties"); // log4j.properties lo4j설정 파일 찾는 구문
+		//PropertyConfigurator.configure("log4j.properties"); // log4j.properties lo4j설정 파일 찾는 구문
 		logger.info("connect start ");
 		
 		conn = null;
@@ -196,43 +196,7 @@ public class JdbcProxyHandler {
 			logger.info("Registry Port: " + rsPD.getString(1) + " ");
 			logger.info("Password: " + rsPD.getString(2)); //보안상 디코드 되지 않은 비밀번호 저장
 		}
-		//end
-		
-		// resion 사용하지 않는 코드
-		//		//// Registry Port 가져오는 쿼리
-		//		sql = OracleQuery.getPort();
-		//		// Registry Port 가져오기
-		//		pre = conn.prepareStatement(sql);
-		//		pre.setString(1, prop.getProperty("proxyIp")); // localhost가 아닐시 해당 값을 변경해주어야함.
-		//		pre.setString(2, prop.getProperty("proxyNm"));
-		//		rsPD = pre.executeQuery();
-		//		// sql 조회 결과 예외 처리
-		//		if (rsPD == null) {
-		//			throw new SQLException();
-		//		}
-		//		// 쿼리문 조회 결과 프로퍼티에 저장
-		//		while (rsPD.next()) {
-		//			// proxyPort 저장
-		//			prop.setProperty("proxyPort", rsPD.getString(1));
-		//			logger.info("Registry Port: " + prop.getProperty("proxyPort") + " ");
-		//		}
-		//
-		//		// 암호화된 비밀번호  가져와서 디코딩 하기
-		//		sql = OracleQuery.getUser_pw();
-		//		//암호화된 비밀번호 가져오기
-		//		pre = conn.prepareStatement(sql);
-		//		pre.setString(1, prop.getProperty("svrId"));
-		//		pre.setString(2, prop.getProperty("schemaId"));
-		//		pre.setString(3, prop.getProperty("user"));
-		//		rsPD = pre.executeQuery();
-		//		// sql 조회 결과 예외 처리
-		//		if (rsPD == null) {
-		//			throw new SQLException();
-		//		}
-		//		while (rsPD.next()) {
-		//			prop.setProperty("password", Util.AES_Decode((rsPD.getString(1))));
-		//		}
-		// end
+		//PD사용을 마친 CONN객체는 반납한다. -> 주의 RD CONN객체는 쿼리문을 사용하기위해 유지해야함.
 		conn = null;
 	}
 	
@@ -249,12 +213,13 @@ public class JdbcProxyHandler {
 		prop.setProperty("schemaId", userInfo.get("schemaId")); // SQLSHARP_110
 	}
 
-	// url 유저가 접속을 원하는 RD의 URL 설정 메소드
+	//유저가 접속을 원하는 RD의 URL 설정 메소드
 	private static String setRDUrl() {
-		String connectUrl = String.format("jdbc:vjdbc:rmi://%s:%s/%s,%s", prop.getProperty("proxyIp"), // localhost 고정
-				prop.getProperty("proxyPort"), // PD에서(AR) 유저가 입력한 정보
-				prop.getProperty("proxyNm"), // 유저 입력 정보
-				prop.getProperty("svrId")); // PD에서(AR) 유저가 입력한 정보
+		String connectUrl = String.format("jdbc:vjdbc:rmi://%s:%s/%s,%s",
+											prop.getProperty("proxyIp"), // localhost 고정
+											prop.getProperty("proxyPort"), // PD에서(AR) 유저가 입력한 정보 2011
+											prop.getProperty("proxyNm"), // 유저 입력 정보 (objectName) HYUK
+											prop.getProperty("svrId")); // PD에서(AR) 유저가 입력한 정보
 		return connectUrl;
 	}
 }

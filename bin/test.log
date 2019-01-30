@@ -1,0 +1,17 @@
+A4[2019-01-30 13:53:46] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:31)] - JDBC Proxy start
+A4[2019-01-30 13:53:53] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A4[2019-01-30 13:53:55] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:187)] - proxyIp1
+A4[2019-01-30 13:53:55] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:187)] - objectName2
+A4[2019-01-30 13:53:55] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:187)] - serverName3
+A4[2019-01-30 13:53:55] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:187)] - userID4
+A4[2019-01-30 13:53:56] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:187)] - userPWexit
+A4[2019-01-30 13:53:56] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:37)] - Exiting application.
+A4[2019-01-30 13:55:43] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:28)] - JDBC Proxy start
+A4[2019-01-30 14:27:55] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:28)] - JDBC Proxy start
+A4[2019-01-30 14:28:26] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A4[2019-01-30 14:29:17] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:26)] - JDBC Proxy start
+A4[2019-01-30 14:29:19] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:187)] - proxyIp1
+A4[2019-01-30 14:29:19] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:187)] - objectName2
+A4[2019-01-30 14:29:19] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:187)] - serverName3
+A4[2019-01-30 14:29:21] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:187)] - userIDexit
+A4[2019-01-30 14:29:21] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:36)] - Exiting application.

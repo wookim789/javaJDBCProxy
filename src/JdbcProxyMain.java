@@ -1,28 +1,31 @@
+import java.io.File;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import de.simplicit.vjdbc.util.Util;
 import userstatemachine.UserstateMachine;
 
 /*
- * MAIN ÇÔ¼ö
+ * MAIN ï¿½Ô¼ï¿½
  * 
  * @version 1 19/01/28
  * @author intern Kim Gyeongwoo
  * @since JDK1.8
 */
 public class JdbcProxyMain {
-
-	static Logger mainLogger = Logger.getLogger(JdbcProxyMain.class.getName());
-	
 	public static void main(String[] args) {
-		//log4j properties ÆÄÀÏ ºÒ·¯¿À±â
-		PropertyConfigurator.configure("log4j.properties"); 
+		
+		File jarDir = new File(ClassLoader.getSystemClassLoader().getResource(".").getPath());
+		String logPath = jarDir.getAbsolutePath();
+		System.out.println(logPath);
+		System.setProperty("test", logPath);
+
+		PropertyConfigurator.configure(JdbcProxyMain.class.getResourceAsStream("log4j.properties")); 
+		Logger mainLogger = Logger.getLogger("prac");
 		mainLogger.info("JDBC Proxy start");
 		
-		//À¯ÀúÀÇ Á¤º¸¸¦ ÀÔ·Â¹Þ°í Ã³¸®ÇÏ´Â »óÅÂ¸Ó½Å ¸Þ¼Òµå
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â¹Þ°ï¿½ Ã³ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Â¸Ó½ï¿½ ï¿½Þ¼Òµï¿½
 		UserstateMachine userInterface = new UserstateMachine();
 		try {
 			userInterface.stateMachine();

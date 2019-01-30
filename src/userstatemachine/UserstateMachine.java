@@ -35,7 +35,7 @@ public class UserstateMachine {
 	// 상태머신 제어 변수
 	private int userState;
 	// 로그 객체
-	private Logger logger = Logger.getLogger(JdbcProxyHandler.class.getName());
+	private Logger logger = Logger.getLogger("prac");
 
 	/*
 	 * 유저의 입력 정보에 따른 상태머신 메소드
@@ -90,17 +90,20 @@ public class UserstateMachine {
 				//RD로 쿼리문 보내기
 				case 9 : 
 					logger.info("RD connection success.");
-					System.out.println("You can query to DB!");
+					System.out.println("You can query to DB.");
 					System.out.println("==========================================");
 					System.out.println("Insert your query : ");
 					String query = buffer.readLine();
 					while(true) {
 	
 						isCommand(query);
-						if(userState ==0 || userState ==8) {
+						if(userState == 0 || userState ==8) {
 							break;
+						}else if (userState == 10) {
+							userState = 9;
 						}
-						else if(query.charAt(query.length()-1)==';') {
+						
+						if(query.charAt(query.length()-1)==';') {
 							//쿼리문 보내기
 							query = query.replace(";","");
 							System.out.println(query);
@@ -125,7 +128,13 @@ public class UserstateMachine {
 					e.printStackTrace();
 					break;
 				}
-				userState = 0;
+				if(userState != 9) {//////////////////////////////////////////////////////시작
+					userState = 0;
+				}else {
+					userState = 9;
+				}
+				System.out.println(userState);
+				
 			  //오라클 드라이버를 찾지 못했을 때
 			} catch (ClassNotFoundException e) {
 				userState = 8;
