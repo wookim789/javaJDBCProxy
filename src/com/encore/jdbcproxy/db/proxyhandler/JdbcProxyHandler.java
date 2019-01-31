@@ -1,6 +1,6 @@
 package com.encore.jdbcproxy.db.proxyhandler;
 
-//jdbc »ç¿ëÀ» À§ÇÑ ¶óÀÌºê·¯¸®
+//jdbc ì‚¬ìš©ì„ ìœ„í•œ ë¼ì´ë¸ŒëŸ¬ë¦¬
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,21 +10,21 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Properties;
 
-//log4j ¶óÀÌºê·¯¸®
+//log4j ë¼ì´ë¸ŒëŸ¬ë¦¬
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-//Äõ¸®¹® ÀúÀåÇÑ Å¬·¡½º
+//ì¿¼ë¦¬ë¬¸ ì €ì¥í•œ í´ë˜ìŠ¤
 import com.encore.jdbcproxy.db.query.oracle.OracleQuery;
 
 import de.simplicit.vjdbc.util.Util;
 
-/* java ¾îÇÃ¸®ÄÉÀÌ¼Ç°ú DB¿¬°áÀ» À§ÇÑ Å¬·¡½º
+/* java ì–´í”Œë¦¬ì¼€ì´ì…˜ê³¼ DBì—°ê²°ì„ ìœ„í•œ í´ë˜ìŠ¤
  * 
- * DBÀÇ Á¾·ù´Â 2°¡Áö·Î ÇÊ¿ä¿¡ ÀÇÇØ ¼³Á¤
+ * DBì˜ ì¢…ë¥˜ëŠ” 2ê°€ì§€ë¡œ í•„ìš”ì— ì˜í•´ ì„¤ì •
  * 
- * RD(Real DB) Á¦Ç°ÀÇ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â ½ÇÁ¦ DB
- * PD(Proxy DB) À¯Àú°¡ ¿øÇÏ´Â RD¿¡ Á¢¼ÓÇÏ±â À§ÇÑ Á¤º¸¸¦ ÀúÀåÇÏ´Â DB -> ´ë¸®ÀÚ ¿ªÇÒ 
+ * RD(Real DB) ì œí’ˆì˜ ë°ì´í„°ë¥¼ ì €ì¥í•˜ëŠ” ì‹¤ì œ DB
+ * PD(Proxy DB) ìœ ì €ê°€ ì›í•˜ëŠ” RDì— ì ‘ì†í•˜ê¸° ìœ„í•œ ì •ë³´ë¥¼ ì €ì¥í•˜ëŠ” DB -> ëŒ€ë¦¬ì ì—­í•  
  * 
  * @version 1 19/01/28
  * @author intern Kim Gyeongwoo
@@ -32,57 +32,59 @@ import de.simplicit.vjdbc.util.Util;
 */
 public class JdbcProxyHandler {
 
-	/* »ı¼ºÀÚ
+	/* ìƒì„±ì
 	 * 
 	 */
 	public JdbcProxyHandler() {
 
 	}
 
-	/* connection °´Ã¼
+	/* connection ê°ì²´
 	 * 
 	 */
 	private static Connection conn;
-	/* DBConnection Å¬·¡½ºÀÇ ·Î±× °´Ã¼
+	/* DBConnection í´ë˜ìŠ¤ì˜ ë¡œê·¸ ê°ì²´
 	 * 
 	 */
-	private static Logger logger = Logger.getLogger("prac");
-	/* À¯Àú¿¡°Ô ÀÔ·Â¹ŞÀº Á¤º¸¸¦ ÀúÀåÇÒ propertise °´Ã¼
+	private static Logger logger = Logger.getLogger("A");
+	/* ìœ ì €ì—ê²Œ ì…ë ¥ë°›ì€ ì •ë³´ë¥¼ ì €ì¥í•  propertise ê°ì²´
 	 * 
 	 */
 	private static Properties prop;
-	/* ÇÁ¸®Æä¾î½ºÅ×ÀÌ¸ÕÆ® °´Ã¼
+	/* í”„ë¦¬í˜ì–´ìŠ¤í…Œì´ë¨¼íŠ¸ ê°ì²´
 	 * 
 	 */
 	private static PreparedStatement pre;
 
-	/* 2¹ø Â° DB¿¡ ¿¬°á½Ãµµ¸¦ ÇÏ´Â ¸Ş¼Òµå
+	/* 2ë²ˆ ì§¸ DBì— ì—°ê²°ì‹œë„ë¥¼ í•˜ëŠ” ë©”ì†Œë“œ
 	 * 
 	 * 
-	 * @param Connection connInfo À¯ÀúÀÇ Á¤º¸¿Í Á¢¼ÓÀ» ¿øÇÏ´Â DBÁ¤º¸¸¦ ´ãÀº µ¥ÀÌÅÍ
-	 * @return Connection dbconn DB¿¬°á »óÅÂ ÀúÀåÇÏ´Â ÇÊµå ¸â¹ö
+	 * @param Connection connInfo ìœ ì €ì˜ ì •ë³´ì™€ ì ‘ì†ì„ ì›í•˜ëŠ” DBì •ë³´ë¥¼ ë‹´ì€ ë°ì´í„°
+	 * @return Connection dbconn DBì—°ê²° ìƒíƒœ ì €ì¥í•˜ëŠ” í•„ë“œ ë©¤ë²„
 	 */
 	public static void connect() throws ClassNotFoundException, SQLException {
-		//PropertyConfigurator.configure("log4j.properties"); // log4j.properties lo4j¼³Á¤ ÆÄÀÏ Ã£´Â ±¸¹®
+		//PropertyConfigurator.configure("log4j.properties"); // log4j.properties lo4jì„¤ì • íŒŒì¼ ì°¾ëŠ” êµ¬ë¬¸
 		logger.info("connect start ");
 		
 		conn = null;
 		pre = null;
-		// Á¢¼ÓÇÒ url ¼³Á¤
-		String connectUrl = setRDUrl();// URL ¼³Á¤ ÇÏ´Â ¸Ş¼Òµå
+		// ì ‘ì†í•  url ì„¤ì •
+		String connectUrl = setRDUrl();// URL ì„¤ì • í•˜ëŠ” ë©”ì†Œë“œ
 
-		// virtualdriver ·Îµù
+		// virtualdriver ë¡œë”©
 		if (Class.forName("de.simplicit.vjdbc.VirtualDriver") == null) {
 			throw new ClassNotFoundException();
 		}
 
-		// conn °´Ã¼ »ı¼º
+		// conn ê°ì²´ ìƒì„±
 		conn = DriverManager.getConnection(connectUrl, prop);
 
 		if (conn == null) {
 			throw new SQLException();
 		}
 		logger.info(conn.getMetaData() + " ");
+		logger.info(conn.getMetaData().getDriverName());
+		logger.info(conn.getMetaData().getDriverVersion());
 		System.out.println(conn.getMetaData());
 	}
 	
@@ -94,8 +96,10 @@ public class JdbcProxyHandler {
 		pre = conn.prepareStatement(query);
 		ResultSet rs = pre.executeQuery();
 
-		if(rs == null) {
-			System.out.println("No search data.");
+		if(!rs.isBeforeFirst()) {
+			System.out.println("------------------------------------------");
+			System.out.println("             No search data.");
+			System.out.println("------------------------------------------");
 			return;
 		}
 		
@@ -115,40 +119,39 @@ public class JdbcProxyHandler {
 		}
 	}
 
-	/* À¯Àú°¡ ¿øÇÏ´Â DBÀÇ Á¢¼ÓÀ» ÇÏ±â Àü¿¡ °ÅÄ¡´Â ´ë¸®ÀÚ ¿ªÇÒÀÇ µ¥ÀÌÅÍº£ÀÌ½º. Proxy Database : PD = AR
+	/* ìœ ì €ê°€ ì›í•˜ëŠ” DBì˜ ì ‘ì†ì„ í•˜ê¸° ì „ì— ê±°ì¹˜ëŠ” ëŒ€ë¦¬ì ì—­í• ì˜ ë°ì´í„°ë² ì´ìŠ¤. Proxy Database : PD = AR
 	 * 
 	 * 
-	 * ÇØ´ç DB¿¡¼­ À¯Àú°¡ ÀÔ·ÂÇÑ Á¤º¸·Î Á¢¼ÓÀ» ÇÏ°íÀÚ ÇÏ´Â DB(RD)ÀÇ Á¢¼Ó Á¤º¸¸¦ Á¶È¸ÇÔ.
+	 * í•´ë‹¹ DBì—ì„œ ìœ ì €ê°€ ì…ë ¥í•œ ì •ë³´ë¡œ ì ‘ì†ì„ í•˜ê³ ì í•˜ëŠ” DB(RD)ì˜ ì ‘ì† ì •ë³´ë¥¼ ì¡°íšŒí•¨.
 	 * 
-	 * @param HashMap<String, String> userInfo userInterface¿¡¼­ À¯Àú°¡ ÀÔ·ÂÇÑ Á¤º¸¸¦ hashmapÀ¸·Î
-	 * ¹ŞÀ½
+	 * @param HashMap<String, String> userInfo userInterfaceì—ì„œ ìœ ì €ê°€ ì…ë ¥í•œ ì •ë³´ë¥¼ hashmapìœ¼ë¡œ ë°›ìŒ
 	 */
 	public static void connectPD(HashMap<String, String> userInfo) throws Exception {
 		logger.info("connectPD ");
-		setUserProp(userInfo);								// À¯ÀúÀÇ Á¢¼Ó Á¤º¸¸¦ property¿¡ ÀúÀå ÇÏ´Â ¸Ş¼Òµå
-		 // À¯Àú°¡ Á¢¼ÓÇÏ´Â PD(AR)¼­¹öÀÇ ÁÖ¼Ò ¼³Á¤ proxy IP : À¯Àú°¡ Á¢¼Ó ÇÒ PD(AR)¼­¹öÀÇ ¾ÆÀÌÇÇ ÁÖ¼Ò 
-		String urlPD = "jdbc:oracle:thin:@" + prop.getProperty("proxyIp");// 192.168.1.32:1521:orcl"; 
+		setUserProp(userInfo);								// ìœ ì €ì˜ ì ‘ì† ì •ë³´ë¥¼ propertyì— ì €ì¥ í•˜ëŠ” ë©”ì†Œë“œ
+		 // ìœ ì €ê°€ ì ‘ì†í•˜ëŠ” PD(AR)ì„œë²„ì˜ ì£¼ì†Œ ì„¤ì • proxy IP : ìœ ì €ê°€ ì ‘ì† í•  PD(AR)ì„œë²„ì˜ ì•„ì´í”¼ ì£¼ì†Œ 
+		String urlPD = "jdbc:oracle:thin:@" + prop.getProperty("pd_proxyIp");// 192.168.1.32:1521:orcl"; 
 		
-		prop.setProperty("proxyIp", "localhost"); 			//»ç¿ëÀ» ´ÙÇÑ(À§ÀÇ Á¢¼Ó url) ÇÁ·Ï½Ã ip°ªÀ» localhost·Î º¯È¯
+		prop.setProperty("proxyIp", "localhost"); 		
 		
-		String userIdPD = prop.getProperty("user");			// PDÀÇ À¯Àú ¾ÆÀÌµğ
-		String userPwPD = prop.getProperty("password");		// PDÀÇ À¯Àú ºñ“A¹øÈ£
+		String userIdPD = prop.getProperty("user");			// PDì˜ ìœ ì € ì•„ì´ë””
+		String userPwPD = prop.getProperty("pd_password");		// PDì˜ ìœ ì € ë¹„ë°ƒë²ˆí˜¸
 		
-		//resion »ç¿ë º¯¼öµé null·Î ÃÊ±âÈ­
-		String sql = null;									// Äõ¸®¹®À» ÀúÀåÇÒ ½ºÆ®¸µ °´Ã¼
-		conn = null; 										// PDÀÇ Ä¿³Ø¼Ç °´Ã¼
-		pre = null;											// PDÀÇ ÇÁ¸®Æä¾î½ºÅ×ÀÌ¸ÕÆ®
-		ResultSet rsPD = null;								// ½ºÆ®¸µ sqlÀÇ Äõ¸® °á°ú¹®
+		//resion ì‚¬ìš© ë³€ìˆ˜ë“¤ nullë¡œ ì´ˆê¸°í™”
+		ResultSet rsPD = null;		// ìŠ¤íŠ¸ë§ sqlì˜ ì¿¼ë¦¬ ê²°ê³¼ë¬¸
+		String sql = null;			// ì¿¼ë¦¬ë¬¸ì„ ì €ì¥í•  ìŠ¤íŠ¸ë§ ê°ì²´
+		conn = null; 				// PDì˜ ì»¤ë„¥ì…˜ ê°ì²´
+		pre = null;					// PDì˜ í”„ë¦¬í˜ì–´ìŠ¤í…Œì´ë¨¼íŠ¸
 		//end
 		
-		//resion ¿À¶óÅ¬ µå¶óÀÌ¹ö ·Îµù ¹× ¿¹¿ÜÃ³¸®
+		//resion ì˜¤ë¼í´ ë“œë¼ì´ë²„ ë¡œë”© ë° ì˜ˆì™¸ì²˜ë¦¬
 		logger.info("Search oracle driver ");
 		if (Class.forName("oracle.jdbc.driver.OracleDriver") == null) {
 			throw new ClassNotFoundException();
 		}
 		//end
 		
-		//resion À¯ÀúÀÇ ÀÔ·Â Á¤º¸¸¦ ÀÌ¿ëÇÏ¿© PD(AR)¿¡ Á¢¼ÓÇÏ´Â Ä¿³Ø¼Ç °´Ã¼ ÇÒ´ç ¿¹¿ÜÃ³¸®
+		//resion ìœ ì €ì˜ ì…ë ¥ ì •ë³´ë¥¼ ì´ìš©í•˜ì—¬ PD(AR)ì— ì ‘ì†í•˜ëŠ” ì»¤ë„¥ì…˜ ê°ì²´ í• ë‹¹ ì˜ˆì™¸ì²˜ë¦¬
 		logger.info("make connection instance ");
 		conn = DriverManager.getConnection(urlPD, userIdPD, userPwPD);
 		if (conn == null) {
@@ -156,27 +159,33 @@ public class JdbcProxyHandler {
 		}
 		//end
 		
-		userPwPD = null; //PD ·Î±×ÀÎÀ¸·Î »ç¿ëÇÑ ºñ¹Ğ¹øÈ£ ÃÊ±âÈ­ -> PD¿¡¼­ RD ºñ¹Ğ¹øÈ£ °¡Á®¿Í¼­ µğÄÚµùÇÏ¿© ´Ù½Ã ÀúÀå
+		//PD ë¡œê·¸ì¸ìœ¼ë¡œ ì‚¬ìš©í•œ ë¹„ë°€ë²ˆí˜¸ ì´ˆê¸°í™” 
+		userPwPD = null; 
 		
-		//resion svr_id¸¦ Á¶È¸ 
+		//resion svr_idë¥¼ ì¡°íšŒ 
 		sql = OracleQuery.getSvr_id();
-		// SVR_ID °¡Á®¿À±â
+		// SVR_ID ê°€ì ¸ì˜¤ê¸°
 		pre = conn.prepareStatement(sql);
 		pre.setString(1, prop.getProperty("serverName"));
 		rsPD = pre.executeQuery();
-		// ¿¹¿Ü Ã³¸®
-		if (rsPD == null) {
+		// ì˜ˆì™¸ ì²˜ë¦¬
+		if(!rsPD.isBeforeFirst()) {
+			logger.error("User information is incorrect");
+			logger.error("serverName");
+			System.out.println("------------------------------------------");
+			System.out.println("   Check your Server Name information!");
+			System.out.println("------------------------------------------");
 			throw new SQLException();
 		}
-		// Äõ¸®¹® Á¶È¸ °á°ú ÇÁ·ÎÆÛÆ¼¿¡ ÀúÀå
+		// ì¿¼ë¦¬ë¬¸ ì¡°íšŒ ê²°ê³¼ í”„ë¡œí¼í‹°ì— ì €ì¥
 		while (rsPD.next()) {
-			// svrIDÀúÀå
+			// svrIDì €ì¥
 			prop.setProperty("svrId", rsPD.getString(1));
 			logger.info("SVR ID: " + prop.getProperty("svrId") + " ");
 		}
 		//end
 		
-		//resion password¿Í registry port °¡Á®¿À±â
+		//resion passwordì™€ registry port ê°€ì ¸ì˜¤ê¸°
 		sql = OracleQuery.getPort_pw();
 		pre = conn.prepareStatement(sql);
 		pre.setString(1, prop.getProperty("proxyIp"));
@@ -184,42 +193,56 @@ public class JdbcProxyHandler {
 		pre.setString(3, prop.getProperty("schemaId"));
 		pre.setString(4, prop.getProperty("user"));
 		pre.setString(5, prop.getProperty("svrId"));
-		//¿¹¿ÜÃ³¸®
+		//ì˜ˆì™¸ì²˜ë¦¬
 		rsPD = pre.executeQuery();
-		if(rsPD==null) {
+
+		if(!rsPD.isBeforeFirst()) {
+			logger.error("User information is incorrect");
+			logger.error("proxyIp, objectName, schemaId, userID");
+			System.out.println("------------------------------------------");
+			System.out.println("      Check your login information!");
+			System.out.println(" proxyIp, objectName, schemaId, userID");
+			System.out.println("------------------------------------------");
 			throw new SQLException();
 		}
 		while(rsPD.next()) {
 			prop.setProperty("proxyPort", rsPD.getString(1));
-			prop.setProperty("password", Util.AES_Decode(rsPD.getString(2))); // ¾ÏÈ£È­µÈ ºñ¹Ğ¹øÈ£¸¦ µğÄÚµùÇÏ¿© ÀúÀå
-			
+			prop.setProperty("password", Util.AES_Decode(rsPD.getString(2))); // ì•”í˜¸í™”ëœ ë¹„ë°€ë²ˆí˜¸ë¥¼ ë””ì½”ë”©í•˜ì—¬ ì €ì¥
 			logger.info("Registry Port: " + rsPD.getString(1) + " ");
-			logger.info("Password: " + rsPD.getString(2)); //º¸¾È»ó µğÄÚµå µÇÁö ¾ÊÀº ºñ¹Ğ¹øÈ£ ÀúÀå
+			logger.info("Password: " + rsPD.getString(2)); //ë³´ì•ˆìƒ ë””ì½”ë“œ ë˜ì§€ ì•Šì€ ë¹„ë°€ë²ˆí˜¸ ì €ì¥
 		}
-		//PD»ç¿ëÀ» ¸¶Ä£ CONN°´Ã¼´Â ¹İ³³ÇÑ´Ù. -> ÁÖÀÇ RD CONN°´Ã¼´Â Äõ¸®¹®À» »ç¿ëÇÏ±âÀ§ÇØ À¯ÁöÇØ¾ßÇÔ.
+		
+		//ì´ì œ ë”ì´ìƒ í•„ìš”ì—†ëŠ” pdë§Œì˜ ì†ì„±ì€ ì‚­ì œí•œë‹¤.
+		prop.remove("pd_proxyIp");
+		prop.remove("pd_password");
+		//PDì‚¬ìš©ì„ ë§ˆì¹œ CONNê°ì²´ëŠ” ë°˜ë‚©í•œë‹¤. -> ì£¼ì˜ RD CONNê°ì²´ëŠ” ì¿¼ë¦¬ë¬¸ì„ ì‚¬ìš©í•˜ê¸°ìœ„í•´ ìœ ì§€í•´ì•¼í•¨.
 		conn = null;
+		pre = null;
 	}
 	
-
-	// property Á¢¼Ó Á¤º¸ µğºñ ¼³Á¤ ¸Ş¼Òµå
+	// property ì ‘ì† ì •ë³´ ë””ë¹„ ì„¤ì • ë©”ì†Œë“œ
 	private static void setUserProp(HashMap<String, String> userInfo) {
 		prop = new Properties();
-		prop.setProperty("proxyIp", userInfo.get("proxyIp"));
+		//prop.setProperty("proxyIp", userInfo.get("proxyIp"));   RDì˜ ip PDì—ì„œ ê°€ì ¸ì˜¤ë©´  í• ë‹¹
+		prop.setProperty("pd_proxyIp", userInfo.get("proxyIp"));//PDì˜ ip PDëŠ” ì²« ë²ˆì§¸ ë””ë¹„ì˜ ì ‘ì† ì •ë³´ì´ê³  PDì—ì„œ RDì˜ ì ‘ì†ì •ë³´ë¥¼ ê°€ì ¸ì˜¤ë©´ í•´ë‹¹ ì†ì„±ì€ ì‚­ì œí•œë‹¤.
+		//prop.setProperty("password", userInfo.get("proxyIp"));//RDì˜ pw PDì—ì„œ ê°€ì ¸ì˜¤ë©´  í• ë‹¹
+		prop.setProperty("pd_password", userInfo.get("userPW"));//PDì˜ pw PDëŠ” ì²« ë²ˆì§¸ ë””ë¹„ì˜ ì ‘ì† ì •ë³´ì´ê³  PDì—ì„œ RDì˜ ì ‘ì†ì •ë³´ë¥¼ ê°€ì ¸ì˜¤ë©´ í•´ë‹¹ ì†ì„±ì€ ì‚­ì œí•œë‹¤.
+
 		prop.setProperty("proxyNm", userInfo.get("objectName"));
 		prop.setProperty("serverName", userInfo.get("serverName"));
-		prop.setProperty("user", userInfo.get("userID")); // .toUpperCase()); //¾ÆÀÌµğ´Â ´ë¹®ÀÚ·Î ¹Ş¾Æ¾ßÇÔ.
-		prop.setProperty("password", userInfo.get("userPW"));
+		prop.setProperty("user", userInfo.get("userID")); 
 		prop.setProperty("datawareUserId", userInfo.get("datawareUserId")); // "admin"
 		prop.setProperty("schemaId", userInfo.get("schemaId")); // SQLSHARP_110
 	}
 
-	//À¯Àú°¡ Á¢¼ÓÀ» ¿øÇÏ´Â RDÀÇ URL ¼³Á¤ ¸Ş¼Òµå
+	//ìœ ì €ê°€ ì ‘ì†ì„ ì›í•˜ëŠ” RDì˜ URL ì„¤ì • ë©”ì†Œë“œ
 	private static String setRDUrl() {
 		String connectUrl = String.format("jdbc:vjdbc:rmi://%s:%s/%s,%s",
-											prop.getProperty("proxyIp"), // localhost °íÁ¤
-											prop.getProperty("proxyPort"), // PD¿¡¼­(AR) À¯Àú°¡ ÀÔ·ÂÇÑ Á¤º¸ 2011
-											prop.getProperty("proxyNm"), // À¯Àú ÀÔ·Â Á¤º¸ (objectName) HYUK
-											prop.getProperty("svrId")); // PD¿¡¼­(AR) À¯Àú°¡ ÀÔ·ÂÇÑ Á¤º¸
+											prop.getProperty("proxyIp"), // localhost ê³ ì •
+											prop.getProperty("proxyPort"), // PDì—ì„œ(AR) ìœ ì €ê°€ ì…ë ¥í•œ ì •ë³´ 2011
+											prop.getProperty("proxyNm"), // ìœ ì € ì…ë ¥ ì •ë³´ (objectName) HYUK
+											prop.getProperty("svrId")); // PDì—ì„œ(AR) ìœ ì €ê°€ ì…ë ¥í•œ ì •ë³´
 		return connectUrl;
 	}
 }
+

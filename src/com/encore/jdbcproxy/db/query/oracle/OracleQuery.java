@@ -1,6 +1,6 @@
 package com.encore.jdbcproxy.db.query.oracle;
 /*
- * PD(AR)ÀÇ Å×ÀÌºí¿¡¼­ RD¿¡ Á¢¼ÓÀ» À§ÇÑ Á¤º¸¸¦ °¡Á®¿À´Â Äõ¸®¹® Å¬·¡½º
+ * PD(AR)ì˜ í…Œì´ë¸”ì—ì„œ RDì— ì ‘ì†ì„ ìœ„í•œ ì •ë³´ë¥¼ ê°€ì ¸ì˜¤ëŠ” ì¿¼ë¦¬ë¬¸ í´ë˜ìŠ¤
  * 
  * @version 1 19/01/28
  * @author intern Kim Gyeongwoo
@@ -10,12 +10,11 @@ public class OracleQuery {
 	public OracleQuery(){
 		
 	}
-	
-	//SVR_ID¸¦ °¡Á®¿À´Â Äõ¸®¹®
+	//SVR_IDë¥¼ ê°€ì ¸ì˜¤ëŠ” ì¿¼ë¦¬ë¬¸
 	private final static String SVR_ID = " SELECT SVR_ID " + 
 										 " FROM MD_SVR " +
 										 " WHERE SVR_NM = ?";
-	
+	//REGISTRY_PORT, ì•”í˜¸í™”ëœ PASSWORD ê°€ì ¸ì˜¤ê¸°
 	private final static String PORT_PW = " SELECT DISTINCT A.REGISTRY_PORT, B.PASSWORD " + 
 										  " FROM SQL_PROXY A " + 
 										  " INNER JOIN SQL_PROXY_DBMS_CONN B ON A.PROXY_ID = B.PROXY_ID " + 
@@ -24,7 +23,6 @@ public class OracleQuery {
 										  " AND B.SCHEMA = ? " + 
 										  " AND B.CONN_USER = ? " +
 										  " AND B.SVR_ID = ?";
-	
 	public static String getPort_pw() {
 		return PORT_PW;
 	}
@@ -32,24 +30,5 @@ public class OracleQuery {
 	public static String getSvr_id() {
 		return SVR_ID;
 	}
-
-//resion ¾Æ·¡ µÎ Äõ¸®¹®À» À§ÀÇ port_pw Äõ¸®¹®À¸·Î ÅëÇÕ
-// Æ÷Æ® Á¤º¸¸¦ °¡Á®¿À´Â Äõ¸®¹®
-// private static String PORT = " SELECT REGISTRY_PORT " +
-//							 	" FROM SQL_PROXY " + 
-//							 	" WHERE PROXY_IP = ? " +
-//							 	" AND OBJECT_NAME = ? ";
-//	À¯ÀúÀÇ ºñ¹Ğ¹øÈ£¸¦ °¡Á®¿À´Â Äõ¸®¹®
-//	private static String USER_PW = " SELECT DISTINCT(PASSWORD) " +
-//							 	    " FROM SQL_PROXY_DBMS_CONN " +
-//							 		" WHERE SVR_ID= ? " +
-//							 		" AND SCHEMA = ? " +
-//							 		" AND CONN_USER = ? ";
-//	public static String getPort() {
-//			return PORT;
-//	}
-//		
-//	public static String getUser_pw() {
-//		return USER_PW;
-//end	}
 }
+

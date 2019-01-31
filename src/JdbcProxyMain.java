@@ -15,25 +15,26 @@ import userstatemachine.UserstateMachine;
 */
 public class JdbcProxyMain {
 	public static void main(String[] args) {
-		
+		//현재 실행중인 디렉토리 동적으로 받기. 
 		File jarDir = new File(ClassLoader.getSystemClassLoader().getResource(".").getPath());
+		//로그 파일을 저장할 절대 경로 설정
 		String logPath = jarDir.getAbsolutePath();
-		System.out.println(logPath);
+		//log4j 프로퍼티 파일 경로 설정
 		System.setProperty("test", logPath);
-
-		PropertyConfigurator.configure(JdbcProxyMain.class.getResourceAsStream("log4j.properties")); 
-		Logger mainLogger = Logger.getLogger("prac");
-		mainLogger.info("JDBC Proxy start");
 		
-		//������ ������ �Է¹ް� ó���ϴ� ���¸ӽ� �޼ҵ�
-		UserstateMachine userInterface = new UserstateMachine();
+		PropertyConfigurator.configure(JdbcProxyMain.class.getResourceAsStream("log4j.properties")); 
+		Logger logger = Logger.getLogger("A");
+		logger.info("JDBC Proxy start");
+		
+		//유저의 입력을 단계별로 받기위한 
+		UserstateMachine userstateMachine = new UserstateMachine();
 		try {
-			userInterface.stateMachine();
+			userstateMachine.stateMachine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		mainLogger.info("Exiting application.");
+		logger.info("Exiting application.");
 	}
 
 }

@@ -5,26 +5,26 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
 
-/* À¯ÀúÀÇ Á¢¼Ó Á¤º¸¸¦ ÀÔ·Â¹Ş´Â Å¬·¡½º
+/* ìœ ì €ì˜ ì ‘ì† ì •ë³´ë¥¼ ì…ë ¥ë°›ëŠ” í´ë˜ìŠ¤
  * 
  * @version 1 19/01/24
  * @author intern Kim Gyeongwoo
  * @since JDK1.8
 */
 
-//»ç¿ëÀÚ ÀÔ·ÂÀ» ¹Ş±âÀ§ÇÑ ¶óÀÌºê·¯¸®
+//ì‚¬ìš©ì ì…ë ¥ì„ ë°›ê¸°ìœ„í•œ ë¼ì´ë¸ŒëŸ¬ë¦¬
 import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 
 import com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler;
 
-/* À¯ÀúÀÇ ÀÔ·ÂÁ¤º¸¸¦ ¹Ş´Â »óÅÂ¸Ó½Å Å¬·¡½º
+/* ìœ ì €ì˜ ì…ë ¥ì •ë³´ë¥¼ ë°›ëŠ” ìƒíƒœë¨¸ì‹  í´ë˜ìŠ¤
  * 
- * À¯Àú Á¤º¸¸¦ ¼øÂ÷ÀûÀ¸·Î ¹Ş±âÀ§ÇØ  
- * »óÅÂ¸Ó½ÅÀ» ÀÌ¿ëÇÔ.
+ * ìœ ì € ì •ë³´ë¥¼ ìˆœì°¨ì ìœ¼ë¡œ ë°›ê¸°ìœ„í•´  
+ * ìƒíƒœë¨¸ì‹ ì„ ì´ìš©í•¨.
  * 
- * @version 1 19/01/28 ¸Ş¼Òµå ÅëÇÕ
+ * @version 1 19/01/28 ë©”ì†Œë“œ í†µí•©
  * @author intern Kim Gyeongwoo
  * @since JDK1.8
 */
@@ -32,16 +32,16 @@ public class UserstateMachine {
 	public UserstateMachine() {
 		
 	}
-	// »óÅÂ¸Ó½Å Á¦¾î º¯¼ö
+	// ìƒíƒœë¨¸ì‹  ì œì–´ ë³€ìˆ˜
 	private int userState;
-	// ·Î±× °´Ã¼
-	private Logger logger = Logger.getLogger("prac");
+	// ë¡œê·¸ ê°ì²´
+	private static Logger logger = Logger.getLogger("A");
 
 	/*
-	 * À¯ÀúÀÇ ÀÔ·Â Á¤º¸¿¡ µû¸¥ »óÅÂ¸Ó½Å ¸Ş¼Òµå
+	 * ìœ ì €ì˜ ì…ë ¥ ì •ë³´ì— ë”°ë¥¸ ìƒíƒœë¨¸ì‹  ë©”ì†Œë“œ
 	 */
 	public void stateMachine() throws IOException {
-		// »ç¿ëÀÚ ÀÔ·ÂÀ» ¹ŞÀ» ¹öÆÛ °´Ã¼ »ı¼º
+		// ì‚¬ìš©ì ì…ë ¥ì„ ë°›ì„ ë²„í¼ ê°ì²´ ìƒì„±
 		BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
 		HashMap<String, String> userInfoHash = new HashMap<>();
 		userState = 0;
@@ -49,76 +49,49 @@ public class UserstateMachine {
 		while (userState != 8) {
 			try {
 				switch (userState) {
-				// Proxy IP ÀÔ·Â
+				// Proxy IP ì…ë ¥
 				case 0:
 					getUserInfo(userInfoHash, buffer, "proxyIp", 0);
 					break;
-				// object name ÀÔ·Â
+				// object name ì…ë ¥
 				case 1:
 					getUserInfo(userInfoHash, buffer, "objectName", 1);
 					break;
-				// server name ÀÔ·Â
+				// server name ì…ë ¥
 				case 2:
 					getUserInfo(userInfoHash, buffer, "serverName", 2);
 					break;
-				// À¯Àú ¾ÆÀÌµğ
+				// ìœ ì € ì•„ì´ë””
 				case 3:
 					getUserInfo(userInfoHash, buffer, "userID", 3);
 					break;
-				// À¯Àú ºñ¹Ğ¹øÈ£
+				// ìœ ì € ë¹„ë°€ë²ˆí˜¸
 				case 4:
 					getUserInfo(userInfoHash, buffer, "userPW", 4);
 					break;
-				//µ¥ÀÌÅ¸¿ş¾î À¯Àú ¾ÆÀÌµğ
+				//ë°ì´íƒ€ì›¨ì–´ ìœ ì € ì•„ì´ë””
 				case 5:
 					getUserInfo(userInfoHash, buffer, "datawareUserId", 5);
 					break;
-				//½ºÅ°¸¶ ¾ÆÀÌµğ
+				//ìŠ¤í‚¤ë§ˆ ì•„ì´ë””
 				case 6:
 					getUserInfo(userInfoHash, buffer, "schemaId", 6);
 					break;
-				//Ä¿³Ø¼Ç °´Ã¼ »ı¼º 
+				//ì»¤ë„¥ì…˜ ê°ì²´ ìƒì„± 
 				case 7:
 					logger.info("Start connect to PD");
-					//PD(AR)¼­¹ö·Î Á¢¼ÓÇÏ¿© RD(2¹ø Â° µ¥ÀÌÅÍ º£ÀÌ½º)ÀÇ Á¢¼Ó Á¤º¸ Á¶È¸
+					//PD(AR)ì„œë²„ë¡œ ì ‘ì†í•˜ì—¬ RD(2ë²ˆ ì§¸ ë°ì´í„° ë² ì´ìŠ¤)ì˜ ì ‘ì† ì •ë³´ ì¡°íšŒ
 					JdbcProxyHandler.connectPD(userInfoHash);
-					//RD(µÎ¹ø Â° µ¥ÀÌÅÍ º£ÀÌ½º)Á¢¼Ó ÇÏ¿© Á¤º¸ Á¶È¸
+					//RD(ë‘ë²ˆ ì§¸ ë°ì´í„° ë² ì´ìŠ¤)ì ‘ì† í•˜ì—¬ ì •ë³´ ì¡°íšŒ
 					JdbcProxyHandler.connect();
 					userState = 9;
 					break;
-				//case 8 Á¾·á
-				//RD·Î Äõ¸®¹® º¸³»±â
+				//case 8 ì¢…ë£Œ
+				//ì ‘ì†ì— ì„±ê³µ í–ˆì„ ì‹œ RDë¡œ ì¿¼ë¦¬ë¬¸ ë³´ë‚´ê¸°
 				case 9 : 
-					logger.info("RD connection success.");
-					System.out.println("You can query to DB.");
-					System.out.println("==========================================");
-					System.out.println("Insert your query : ");
-					String query = buffer.readLine();
-					while(true) {
-	
-						isCommand(query);
-						if(userState == 0 || userState ==8) {
-							break;
-						}else if (userState == 10) {
-							userState = 9;
-						}
-						
-						if(query.charAt(query.length()-1)==';') {
-							//Äõ¸®¹® º¸³»±â
-							query = query.replace(";","");
-							System.out.println(query);
-							JdbcProxyHandler.getQueryToUser(query);
-							query = "";
-							System.out.println("==========================================");
-							System.out.println("Insert your query : ");
-							query = buffer.readLine();
-						}else {
-							//Äõ¸®¹® ¿¬°áÇÏ±â 
-							query += " " + buffer.readLine();
-						}
-					}
+					getQuery(buffer);
 				}
-			  //À¯Àú°¡ ÀÔ·ÂÇÑ Á¤º¸°¡ Àß¸øµÇ°Å³ª Á¶È¸ÇÑ ³»¿ëÀÌ ¾øÀ» ¶§
+			  //ìœ ì €ê°€ ì…ë ¥í•œ ì •ë³´ê°€ ì˜ëª»ë˜ê±°ë‚˜ ì¡°íšŒí•œ ë‚´ìš©ì´ ì—†ì„ ë•Œ
 			} catch (SQLException e) {
 				System.out.println("");
 				System.out.println("==========================================");
@@ -128,14 +101,14 @@ public class UserstateMachine {
 					e.printStackTrace();
 					break;
 				}
-				if(userState != 9) {//////////////////////////////////////////////////////½ÃÀÛ
+				if(userState != 9) {//////////////////////////////////////////////////////ì‹œì‘
 					userState = 0;
 				}else {
 					userState = 9;
 				}
 				System.out.println(userState);
 				
-			  //¿À¶óÅ¬ µå¶óÀÌ¹ö¸¦ Ã£Áö ¸øÇßÀ» ¶§
+			  //ì˜¤ë¼í´ ë“œë¼ì´ë²„ë¥¼ ì°¾ì§€ ëª»í–ˆì„ ë•Œ
 			} catch (ClassNotFoundException e) {
 				userState = 8;
 				e.printStackTrace();
@@ -145,49 +118,106 @@ public class UserstateMachine {
 			}
 		}
 	}
-
+/*resion ì¿¼ë¦¬ë¬¸ ì…ë ¥ë°›ëŠ” ë©”ì†Œë“œ
+ * ìœ ì €ì—ê²Œ ì¿¼ë¦¬ë¬¸ì„ ì…ë ¥ë°›ì•„ 
+ * ì›í•˜ëŠ” í…Œì´ë¸”ì„ ì¡°íšŒ í•˜ëŠ” ë©”ì†Œë“œ
+ * 
+ * í™•ì¸ëœ ì‚¬í•­
+ * select * from MS_CODE; 
+ * ì²˜ëŸ¼ MS_CODEë¼ëŠ” í…Œì´ë¸”ì€ ì¡°íšŒê°€ ì •ì‚­ ì‘ë™í•¨ ë‹¤ë¥¸ í…Œì´ë¸”ë¡œ SQL_PROXY í…Œì´ë¸”ë„ ì¡°íšŒë¨.
+ * 
+ * í™•ì¸ í•´ì•¼ í•  ì‚¬í•­
+ * INSERT, UPDATE, DELETEê°€ ì •ìƒ ì‘ë™ í•˜ëŠ”ì§€ í™•ì¸í•´ì•¼ í•¨.
+ * 
+ * @param BufferedReader buffer ìœ ì €ì—ê²Œ ì…ë ¥ì„ ë°›ê¸°ìœ„í•œ bufferê°ì²´ ì¸ì
+*/
+	private void getQuery(BufferedReader buffer) throws IOException, SQLException {
+		logger.info("RD connection success.");
+		System.out.println("You can query to DB.");
+		System.out.println("==========================================");
+		System.out.println("Query : ");
+		
+		//ì‚¬ìš©ìì—ê²Œ ì¿¼ë¦¬ë¬¸ ì…ë ¥ë°›ê¸°
+		String query = buffer.readLine();
+		//ê°’ì„ ì…ë ¥í•˜ì§€ ì•Šì•˜ìœ¼ë©´ ë‹¤ì‹œ ì…ë ¥ë°›ìŒ
+		if (query.equals("")) {		
+			System.out.println("Please write your query");
+			logger.info("Query is \"\"");
+			userState = 9;
+			return;
+		//ì˜ˆì™¸ì²˜ë¦¬
+		}else if(query.isEmpty()) {
+			logger.error("query is null.");
+			throw new IOException();
+		}
+		//ì¿¼ë¦¬ë¬¸ì´ ì •ìƒ ì‘ë™ í–ˆë‹¤ë©´, ìœ ì €ì—ê²Œ ê³„ì† ì¿¼ë¦¬ë¬¸ì„ ë°›ì„ ìˆ˜ ìˆë„ë¡ ë°˜ë³µí•¨.
+		while(true) {
+			isCommand(query); //restart = 0 , exit = 8 
+			if(userState == 0 || userState ==8) {
+				break;
+			}else if (userState == 10) {// ë‘˜ë‹¤ ì•„ë‹ˆë©´ ê°’ì„ ì¦ê°€ì‹œí‚´. ë”°ë¼ì„œ 9ì—ì„œ 10ì´ ë˜ê¸° ë•Œë¬¸ì— 9ë¡œ ì´ˆê¸°í™”
+				userState = 9;
+			}
+			
+			if(query.charAt(query.length()-1)==';') { //ì¿¼ë¦¬ë¬¸ì— ;ê°€ ìˆëŠ”ì§€ ì—†ëŠ”ì§€ ê²€ì‚¬
+				//;ìˆìœ¼ë©´ ì¿¼ë¦¬ë¬¸ì´ ì™„ì„±ë¬ë‹¤ ê´€ì£¼í•˜ì—¬ ì¿¼ë¦¬ë¬¸ ì „ë‹¬
+				query = query.replace(";",""); //preparestatedmentì— ë„£ì„ ë¬¸ìì—´ ì´ê¸°ì— ;ëŠ” ì œê±°í•´ì•¼í•œë‹¤.
+				logger.info(query);
+				JdbcProxyHandler.getQueryToUser(query); //ì¿¼ë¦¬ë¬¸ì„ ë°›ì•„ ì¡°íšŒí•˜ëŠ” ì—­í• ì„ í•¨.
+				query = "";
+				//ì¿¼ë¦¬ë¬¸ì´ ì •ìƒ ì‘ë™ í–ˆë‹¤ë©´ ë°”ë¡œ ë‹¤ìŒ ì¿¼ë¦¬ë¬¸ì„ ë°›ìŒ.
+				System.out.println("=========================================="); 
+				System.out.println("Insert your query : ");
+				query = buffer.readLine();
+			}else { //; ì—†ìœ¼ë©´ ì¿¼ë¦¬ë¬¸ì„ ê³„ì† ì…ë ¥ë°›ìŒ
+				//ì¿¼ë¦¬ë¬¸ ì—°ê²°í•˜ê¸° 
+				query += " " + buffer.readLine();
+			}
+		}
+	}
+	
 	/*
-	 * À¯ÀúÀÇ ÀÔ·Â Á¤º¸¸¦ ¹Ş´Â ¸Ş¼Òµå
+	 * ìœ ì €ì˜ ì…ë ¥ ì •ë³´ë¥¼ ë°›ëŠ” ë©”ì†Œë“œ
 	 * 
-	 * @param HashMap<String, String> userInfoHash À¯ÀúÀÇ ÀÔ·ÂÁ¤º¸¸¦ ´ãÀ» ÇØ½¬¸Ê °´Ã¼
+	 * @param HashMap<String, String> userInfoHash ìœ ì €ì˜ ì…ë ¥ì •ë³´ë¥¼ ë‹´ì„ í•´ì‰¬ë§µ ê°ì²´
 	 * 
-	 * @param BufferedReader buffer À¯ÀúÀÇ ÀÔ·ÂÀ» ¹ŞÀ» ¹öÆÛµå ¸®´õ °´Ã¼
+	 * @param BufferedReader buffer ìœ ì €ì˜ ì…ë ¥ì„ ë°›ì„ ë²„í¼ë“œ ë¦¬ë” ê°ì²´
 	 * 
-	 * @param String userInfo ÀÔ·Â ¹ŞÀ» À¯ÀúÀÇ Á¤º¸ ("proxyIp", "objectName", "serverName",
-	 * "userID", "userPW","datawareUserId","schemaId" ) Áß¿¡ ÇÏ³ª¸¦ ÀÔ·Â ¹Ş´Â´Ù.
+	 * @param String userInfo ì…ë ¥ ë°›ì„ ìœ ì €ì˜ ì •ë³´ ("proxyIp", "objectName", "serverName",
+	 * "userID", "userPW","datawareUserId","schemaId" ) ì¤‘ì— í•˜ë‚˜ë¥¼ ì…ë ¥ ë°›ëŠ”ë‹¤.
 	 * 
-	 * @param int userStareNum ÇöÀç »óÅÂ¸Ó½ÅÀÇ »óÅÂ
+	 * @param int userStareNum í˜„ì¬ ìƒíƒœë¨¸ì‹ ì˜ ìƒíƒœ
 	 */
 	private void getUserInfo(HashMap<String, String> userInfoHash, BufferedReader buffer, String userInfo,
 			int userStareNum) throws IOException {
-		// Ã¹ ½ÇÇà½Ã Ä¿¸Çµå Á¤º¸ ¸Ş¼Òµå Ãâ·Â
+		// ì²« ì‹¤í–‰ì‹œ ì»¤ë§¨ë“œ ì •ë³´ ë©”ì†Œë“œ ì¶œë ¥
 		if (userStareNum == 0) {
-			// Ä¿¸Çµå Á¤º¸ Ãâ·Â ¸Ş¼Òµå
+			// ì»¤ë§¨ë“œ ì •ë³´ ì¶œë ¥ ë©”ì†Œë“œ
 			printCommand();
 		}
 		System.out.println("__________________________________________");
 		System.out.println(String.format("%s : ", userInfo));
 
-		// µ¥ÀÌÅÍ ÀÔ·Â                ÀÔ·ÂÁ¤º¸ ¹®ÀÚ¿­, »ç¿ëÀÚ ÀÔ·Â
+		// ë°ì´í„° ì…ë ¥                ì…ë ¥ì •ë³´ ë¬¸ìì—´, ì‚¬ìš©ì ì…ë ¥
 		userInfoHash.put(userInfo, buffer.readLine());
 
-		// À¯Àú¿¡°Ô ÀÔ·Â¹ŞÀº °ªÀÌ ""ÀÌ¸é
+		// ìœ ì €ì—ê²Œ ì…ë ¥ë°›ì€ ê°’ì´ ""ì´ë©´
 		if (userInfoHash.get(userInfo).equals("")) {
 			logger.debug(String.format("%s %s", userInfo, "is empty."));
 			userInfoHash.remove(userInfo);
-			// ÇöÀç »óÅÂ·Î ÀüÀÌ
+			// í˜„ì¬ ìƒíƒœë¡œ ì „ì´
 			userState = userStareNum;
 			return;
-		// ÀÔ·Â ¹ŞÀº °ªÀÌ null ÀÌ¸é ¿¹¿Ü ¹ß»ı
+		// ì…ë ¥ ë°›ì€ ê°’ì´ null ì´ë©´ ì˜ˆì™¸ ë°œìƒ
 		} else if (userInfoHash.get(userInfo).isEmpty()) {
 			throw new IOException();
 		}
-		// »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ªÀÌ ¸í·É¾î ÀÎÁö È®ÀÎÇÏ´Â ¸Ş¼Òµå ½ÇÇà
+		// ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’ì´ ëª…ë ¹ì–´ ì¸ì§€ í™•ì¸í•˜ëŠ” ë©”ì†Œë“œ ì‹¤í–‰
 		isCommand(userInfoHash.get(userInfo));
 		logger.info(userInfo + userInfoHash.get(userInfo));
 	}
 
-	// ´Ü¼ø Ä¿¸Çµå Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ¸Ş¼Òµå
+	// ë‹¨ìˆœ ì»¤ë§¨ë“œ ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ
 	private void printCommand() {
 		System.out.println("==========================================");
 		System.out.println("           Command Information");
@@ -198,9 +228,9 @@ public class UserstateMachine {
 	}
 
 	/*
-	 * »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ªÀÌ Ä¿¸ÇµåÀÎÁö È®ÀÎ ¹× »óÅÂ ÀüÀÌ ¸Ş¼Òµå
+	 * ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’ì´ ì»¤ë§¨ë“œì¸ì§€ í™•ì¸ ë° ìƒíƒœ ì „ì´ ë©”ì†Œë“œ
 	 * 
-	 * @param userInput »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ª
+	 * @param userInput ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’
 	 */
 	private void isCommand(String userInput) {
 		if (userInput.equals("restart")) {
