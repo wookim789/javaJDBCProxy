@@ -46,48 +46,71 @@ public class UserstateMachine {
 		HashMap<String, String> userInfoHash = new HashMap<>();
 		userState = 0;
 
-		while (userState != 8) {
+		while (userState != 100) {
 			try {
 				switch (userState) {
+				////======================================AR============================================
+				//======================================================================================
 				// Proxy IP 입력
 				case 0:
-					getUserInfo(userInfoHash, buffer, "proxyIp", 0);
-					break;
-				// object name 입력
-				case 1:
-					getUserInfo(userInfoHash, buffer, "objectName", 1);
-					break;
-				// server name 입력
-				case 2:
-					getUserInfo(userInfoHash, buffer, "serverName", 2);
+					getUserInfo(userInfoHash, buffer, "url", userState);
 					break;
 				// 유저 아이디
-				case 3:
-					getUserInfo(userInfoHash, buffer, "userID", 3);
+				case 1:
+					getUserInfo(userInfoHash, buffer, "AR_ID", userState);
 					break;
 				// 유저 비밀번호
-				case 4:
-					getUserInfo(userInfoHash, buffer, "userPW", 4);
+				case 2:
+					getUserInfo(userInfoHash, buffer, "AR_PW", userState);
 					break;
-				//데이타웨어 유저 아이디
-				case 5:
-					getUserInfo(userInfoHash, buffer, "datawareUserId", 5);
+				//======================================================================================
+				////======================================DB============================================
+				// server name 입력
+				case 3:
+					getUserInfo(userInfoHash, buffer, "serverName", userState);
 					break;
 				//스키마 아이디
-				case 6:
-					getUserInfo(userInfoHash, buffer, "schemaId", 6);
+				case 4:
+					getUserInfo(userInfoHash, buffer, "schemaId", userState);
 					break;
-				//커넥션 객체 생성 
+				//DB 접속 아이디
+				case 5:
+					getUserInfo(userInfoHash, buffer, "connUser", userState);
+					break;
+				//======================================================================================
+				////====================================기타 설정정보=======================================
+				// proxy name 입력(ojectname)
+				case 6:
+					getUserInfo(userInfoHash, buffer, "proxyNm", userState);
+					break;
+				//데이타웨어 유저 아이디
 				case 7:
-					logger.info("Start connect to PD");
-					//PD(AR)서버로 접속하여 RD(2번 째 데이터 베이스)의 접속 정보 조회
-					JdbcProxyHandler.connectPD(userInfoHash);
-					//RD(두번 째 데이터 베이스)접속 하여 정보 조회
+					getUserInfo(userInfoHash, buffer, "datawareUserId", userState);
+					System.out.println("dataware id end");
+					break;
+				//======================================================================================
+					
+				//커넥션 객체 생성 
+				case 8:
+					logger.info("Start connect to AR");
+					System.out.println("==========================================");
+					System.out.println("start connect ar");
+					System.out.println("==========================================");
+					//AR로 접속하여 DB(2번 째 데이터 베이스)의 접속 정보 조회
+					JdbcProxyHandler.connectAR(userInfoHash);
+					System.out.println("==========================================");
+					System.out.println("connect ar end");
+					System.out.println("==========================================");
+					//DB(두번 째 데이터 베이스)접속 하여 정보 조회
+					System.out.println("start connect to db");
+					System.out.println("==========================================");
 					JdbcProxyHandler.connect();
-					userState = 9;
+					System.out.println("connect db end");
+					System.out.println("==========================================");
+					userState =9;
 					break;
 				//case 8 종료
-				//접속에 성공 했을 시 RD로 쿼리문 보내기
+				//접속에 성공 했을 시 DB로 쿼리문 보내기
 				case 9 : 
 					getQuery(buffer);
 				}
@@ -103,17 +126,14 @@ public class UserstateMachine {
 				}
 				if(userState != 9) {//////////////////////////////////////////////////////시작
 					userState = 0;
-				}else {
-					userState = 9;
 				}
-				System.out.println(userState);
-				
+			
 			  //오라클 드라이버를 찾지 못했을 때
 			} catch (ClassNotFoundException e) {
-				userState = 8;
+				userState = 100;
 				e.printStackTrace();
 			} catch (Exception e) {
-				userState = 8;
+				userState = 100;
 				e.printStackTrace();
 			}
 		}
@@ -132,7 +152,7 @@ public class UserstateMachine {
  * @param BufferedReader buffer 유저에게 입력을 받기위한 buffer객체 인자
 */
 	private void getQuery(BufferedReader buffer) throws IOException, SQLException {
-		logger.info("RD connection success.");
+		logger.info("AR connection success.");
 		System.out.println("You can query to DB.");
 		System.out.println("==========================================");
 		System.out.println("Query : ");
@@ -152,8 +172,8 @@ public class UserstateMachine {
 		}
 		//쿼리문이 정상 작동 했다면, 유저에게 계속 쿼리문을 받을 수 있도록 반복함.
 		while(true) {
-			isCommand(query); //restart = 0 , exit = 8 
-			if(userState == 0 || userState ==8) {
+			isCommand(query); //restart = 0 , exit = 10
+			if(userState == 0 || userState ==100) {
 				break;
 			}else if (userState == 10) {// 둘다 아니면 값을 증가시킴. 따라서 9에서 10이 되기 때문에 9로 초기화
 				userState = 9;
@@ -243,7 +263,7 @@ public class UserstateMachine {
 			System.out.println("==========================================");
 			System.out.println("                  exit");
 			System.out.println("==========================================");
-			userState = 8;
+			userState = 100;
 			return;
 		} else {
 			userState++;
