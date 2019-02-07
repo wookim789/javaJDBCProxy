@@ -114,7 +114,13 @@ public class JdbcProxyHandler {
 			System.out.println();
 		}
 	}
-
+	//DB에 접속한 이후 유저가 접속을 끊거나 새로운 접속을 시도하면 conn 객체 제거
+	public static void connectionClose() throws SQLException {
+		logger.info("connection close");
+		logger2.info("connection close");
+		pre.close();
+		conn.close();
+	}
 	/* AR 유저가 원하는 DB의 접속을 하기 전에 거치는 대리자 역할의 데이터베이스. AR
 	 * 
 	 * 

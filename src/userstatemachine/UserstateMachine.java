@@ -180,6 +180,8 @@ public class UserstateMachine {
 		while(true) {
 			isCommand(query); //restart = 0 , exit = 100
 			if(userState == 0 || userState ==100) {
+				//conn 객체 제거
+				JdbcProxyHandler.connectionClose();
 				break;
 			}else if (userState == 10) {// 둘다 아니면 값을 증가시킴. 따라서 9에서 10이 되기 때문에 9로 초기화
 				userState = 9;
