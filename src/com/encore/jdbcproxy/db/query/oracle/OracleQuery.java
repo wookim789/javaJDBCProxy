@@ -2,7 +2,7 @@ package com.encore.jdbcproxy.db.query.oracle;
 /*
  * PD(AR)의 테이블에서 RD에 접속을 위한 정보를 가져오는 쿼리문 클래스
  * 
- * @version 1 19/01/28
+ * @version 2 19/02/01
  * @author intern Kim Gyeongwoo
  * @since JDK1.8
 */

@@ -9,19 +9,13 @@ import userstatemachine.UserstateMachine;
 /*
  * MAIN 
  * 
- * @version 1 19/01/28
+ * @version 2 19/02/01
  * @author intern Kim Gyeongwoo
  * @since JDK1.8
 */
 public class JdbcProxyMain {
 	public static void main(String[] args) {
 		//현재 실행중인 디렉토리 동적으로 받기. 
-		try {
-			System.out.println(Class.forName("Util"));
-		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 		File jarDir = new File(ClassLoader.getSystemClassLoader().getResource(".").getPath());
 		//로그 파일을 저장할 절대 경로 설정
 		String logPath = jarDir.getAbsolutePath();
@@ -29,27 +23,23 @@ public class JdbcProxyMain {
 		System.setProperty("test", logPath);
 
 		PropertyConfigurator.configure(JdbcProxyMain.class.getResourceAsStream("log4j.properties")); 
+		//text파일 로그 
 		Logger logger = Logger.getLogger("A");
+		//콘솔 출력 로그
+		Logger logger2 = Logger.getLogger("pack");
 		logger.info("JDBC Proxy start");
+		logger2.info("JDBC Proxy start");
 		
-		//유저의 입력을 단계별로 받기위한 
+		//유저의 입력을 단계별로 받기위한 상태머신 클래스
 		UserstateMachine userstateMachine = new UserstateMachine();
 		try {
+			//상태머신 실행
 			userstateMachine.stateMachine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		logger.info("Exiting application.");
-		
-//		url             192.168.1.32:1521:orcl
-//		AR_ID           SQLSHARP_110
-//		AR_PW           sqlsharp_110
-//		serverName      POSTGRESQL_SQLSHARP
-//		schemaId        sqlsharp
-//		connUser        sqltest
-//		proxyNm         HYUK
-//		datawareUserId  admin
+		logger2.info("Exiting application.");
 	}
-
 }
