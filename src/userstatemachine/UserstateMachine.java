@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
+import java.util.HashMap;
+
+import org.apache.log4j.Logger;
+import com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler;
 
 /* 유저의 접속 정보를 입력받는 클래스
  * 
@@ -11,13 +15,6 @@ import java.sql.SQLException;
  * @author intern Kim Gyeongwoo
  * @since JDK1.8
 */
-
-//사용자 입력을 받기위한 라이브러리
-import java.util.HashMap;
-
-import org.apache.log4j.Logger;
-
-import com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler;
 
 /* 유저의 입력정보를 받는 상태머신 클래스
  * 
@@ -48,8 +45,8 @@ public class UserstateMachine {
 		while (userState != 100) {
 			try {
 				switch (userState) {
-				////======================================AR============================================
 				//======================================================================================
+				//========================================AR접속정보=======================================
 				// AR의 url 입력
 				case 0:
 					getUserInfo(userInfoHash, buffer, "url", userState);
@@ -63,7 +60,7 @@ public class UserstateMachine {
 					getUserInfo(userInfoHash, buffer, "AR_PW", userState);
 					break;
 				//======================================================================================
-				////======================================DB============================================
+				//========================================DB접속정보=======================================
 				// server name 입력
 				case 3:
 					getUserInfo(userInfoHash, buffer, "serverName", userState);
@@ -76,8 +73,6 @@ public class UserstateMachine {
 				case 5:
 					getUserInfo(userInfoHash, buffer, "connUser", userState);
 					break;
-				//======================================================================================
-				////====================================기타 설정정보=======================================
 				// proxy name 입력(ojectname)
 				case 6:
 					getUserInfo(userInfoHash, buffer, "proxyNm", userState);
@@ -85,29 +80,12 @@ public class UserstateMachine {
 				//데이터웨어 유저 아이디
 				case 7:
 					getUserInfo(userInfoHash, buffer, "datawareUserId", userState);
-					System.out.println("dataware id end");
 					break;
 				//======================================================================================
-					
-				//커넥션 객체 생성 
+				//======================================================================================
+				//커넥션 객체 생성 메소드
 				case 8:
-					logger.info("Start connect to AR");
-					logger2.info("Start connect to AR");
-					System.out.println("==========================================");
-					System.out.println("            start connect ar");
-					System.out.println("==========================================");
-					//AR로 접속하여 DB(2번 째 데이터 베이스)의 접속 정보 조회
-					JdbcProxyHandler.connectAR(userInfoHash);
-					System.out.println("            connect ar end");
-					System.out.println("==========================================");
-					//DB(두번 째 데이터 베이스)접속 하여 정보 조회
-					System.out.println("            start connect to db");
-					System.out.println("==========================================");
-					JdbcProxyHandler.connect();
-					System.out.println("            connect db end");
-					System.out.println("==========================================");
-					//위 2가지 메소드로는 상태 제어가 되지 않기 때문에 직접 다음 단계로 전이
-					userState =9;
+					getConnection(userInfoHash);
 					break;
 				//접속에 성공 했을 시 DB로 쿼리문 보내기
 				case 9 : 
@@ -118,17 +96,23 @@ public class UserstateMachine {
 			} catch (SQLException e) {
 				System.out.println("");
 				System.out.println("==========================================");
-				System.out.println("SQL Exception occured. Do you wnat see error log?\nyes : y (exit)\nno : anykey (restart)");
+				System.out.println("******************************************");
+				System.out.println("        * SQL Exception occured. *");
+				System.out.println("        Do you wnat see error log?");
+				System.out.println("__________________________________________");
+				System.out.println("\nyes : y (exit)\nno : anykey (restart)\n");
 				System.out.println("==========================================");
+				System.out.println("******************************************");
+				
 				//소문자 y를 입력 시 에로로그를 출력하고 프로그램 종료
 				if (buffer.readLine().equals("y")) { 
 					e.printStackTrace();
 					break;
 				}
 				//재시작
-				if(userState != 9) {
+				if(userState != 9) { //9일때는 쿼리문을 계속 받기위해 userState 유지
 					userState = 0;
-				}
+				}		
 			  //오라클 드라이버를 찾지 못했을 때
 			} catch (ClassNotFoundException e) {
 				//종료
@@ -140,6 +124,37 @@ public class UserstateMachine {
 				e.printStackTrace();
 			}
 		}
+	}
+	/* resion 커넥션 객체를 만들기 위한 메소드
+	 * 
+	 * JdbcProxyHandler의 메소드 connectAR(), connect() 2가지를 사용한다.
+	 * 2가지 메소드로 AR와 DB에 접속을 시도한다.
+	 * 
+	 * @param HashMap<String, String> userInfoHash 유저의 입력 정보를 저장하는 해쉬맵 객체
+	 * 
+	end */
+	private void getConnection(HashMap<String, String> userInfoHash) throws SQLException, ClassNotFoundException, Exception  {
+		logger.info("Start connect to AR");
+		logger2.info("Start connect to AR");
+		System.out.println("==========================================");
+		System.out.println("            start connect ar");
+		System.out.println("==========================================");
+		//AR로 접속하여 DB(2번 째 데이터 베이스)의 접속 정보 조회
+		JdbcProxyHandler.connectAR(userInfoHash);
+		System.out.println("==========================================");
+		System.out.println("            connect ar end");
+		System.out.println("==========================================");
+		//DB(두번 째 데이터 베이스)접속 하여 정보 조회
+		System.out.println("==========================================");
+		System.out.println("            start connect to db");
+		System.out.println("==========================================");
+		JdbcProxyHandler.connect();
+		System.out.println("==========================================");
+		System.out.println("            connect db end");
+		System.out.println("==========================================");
+		
+		//위 2가지 메소드로는 상태 제어가 되지 않기 때문에 직접 다음 단계로 전이
+		userState =9;
 	}
 /*resion 쿼리문 입력받는 메소드
  * 유저에게 쿼리문을 입력받아 
@@ -153,10 +168,10 @@ public class UserstateMachine {
  * INSERT, UPDATE, DELETE가 정상 작동 하는지 확인해야 함.
  * 
  * @param BufferedReader buffer 유저에게 입력을 받기위한 buffer객체 인자
-*/
+end*/
 	private void getQuery(BufferedReader buffer) throws IOException, SQLException {
-		logger.info("AR connection success.");
-		logger2.info("AR connection success.");
+		logger.info("DB connection success.");
+		logger2.info("DB connection success.");
 		System.out.println("          You can query to DB.");
 		System.out.println("==========================================");
 		System.out.println("Query : ");
@@ -165,7 +180,7 @@ public class UserstateMachine {
 		
 		//값을 입력하지 않았으면 다시 입력받음
 		if (query.equals("")) {		
-			System.out.println("          Please write your query");
+			System.out.println("        Please write your query");
 			logger.info("Query is \"\"");
 			logger2.info("Query is \"\"");
 			userState = 9;
@@ -183,7 +198,7 @@ public class UserstateMachine {
 				//conn 객체 제거
 				JdbcProxyHandler.connectionClose();
 				break;
-			}else if (userState == 10) {// 둘다 아니면 값을 증가시킴. 따라서 9에서 10이 되기 때문에 9로 초기화
+			}else if (userState == 10) {// restart 또는 exit 둘다 아니면 값을 증가시킴. 따라서 9에서 10이 되기 때문에 9로 초기화
 				userState = 9;
 			}
 			

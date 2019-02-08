@@ -1,0 +1,592 @@
+A[2019-02-07 08:57:52] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:33)] - JDBC Proxy start
+A[2019-02-07 08:58:11] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - url192.168.1.32:1521:orcl
+A[2019-02-07 08:58:19] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - AR_IDSQLSHARP_110
+A[2019-02-07 08:58:22] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - AR_PWsqlsharp_110
+A[2019-02-07 08:58:30] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 08:58:35] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - schemaIdsqlsharp
+A[2019-02-07 08:58:40] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - connUsersqltest
+A[2019-02-07 08:58:45] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - proxyNmHYUK
+A[2019-02-07 08:58:52] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - datawareUserIdadmin
+A[2019-02-07 08:58:52] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 08:58:52] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 08:58:52] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 08:58:52] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 08:58:53] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 08:58:53] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 08:58:53] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 08:58:53] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 08:58:53] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 08:58:53] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 08:58:53] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 08:58:53] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 08:58:54] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+A[2019-02-07 08:58:54] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 08:58:54] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 08:58:55] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+A[2019-02-07 08:59:16] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - url192.168.1.32:1521:orcl
+A[2019-02-07 08:59:19] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - AR_IDSQLSHARP_110
+A[2019-02-07 08:59:21] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - AR_PWsqlsharp_110
+A[2019-02-07 08:59:24] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 08:59:27] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - schemaIdsqlsharp
+A[2019-02-07 08:59:30] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - connUsersqltest
+A[2019-02-07 08:59:34] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - proxyNmHYUK
+A[2019-02-07 08:59:37] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - datawareUserIdadmin
+A[2019-02-07 08:59:37] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 08:59:37] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 08:59:37] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 08:59:37] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 08:59:37] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 08:59:37] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 08:59:37] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 08:59:37] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 08:59:37] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 08:59:37] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 08:59:37] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 08:59:48] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.sql.SQLException: Error unmarshaling return; nested exception is: 
+	java.lang.ClassNotFoundException: org.postgresql.util.PSQLException (no security manager: RMI class loader disabled)
+A[2019-02-07 08:59:48] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 08:59:48] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 08:59:48] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 08:59:58] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.sql.SQLException: Error unmarshaling return; nested exception is: 
+	java.lang.ClassNotFoundException: org.postgresql.util.PSQLException (no security manager: RMI class loader disabled)
+A[2019-02-07 08:59:58] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 08:59:58] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 08:59:58] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:00:08] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.sql.SQLException: Error unmarshaling return; nested exception is: 
+	java.lang.ClassNotFoundException: org.postgresql.util.PSQLException (no security manager: RMI class loader disabled)
+A[2019-02-07 09:00:14] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:43)] - Exiting application.
+A[2019-02-07 09:00:44] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:33)] - JDBC Proxy start
+A[2019-02-07 09:01:05] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:01:09] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:01:11] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - AR_PWsqlsharp_110
+A[2019-02-07 09:01:15] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - serverNamesqlsharp
+A[2019-02-07 09:01:18] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - schemaIdSQLSHARP_110
+A[2019-02-07 09:01:24] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - connUserSQLSHARP_110
+A[2019-02-07 09:01:30] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - proxyNmHYUK
+A[2019-02-07 09:01:33] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - datawareUserIdadmin
+A[2019-02-07 09:01:33] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:01:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:01:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:01:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:01:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0001 
+A[2019-02-07 09:01:34] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:01:34] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: PTLH9q/iwsVpQihx7RlUXA==
+A[2019-02-07 09:01:34] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:01:34] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 09:01:34] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 09:01:34] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0001
+A[2019-02-07 09:01:34] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:01:34] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0001
+A[2019-02-07 09:01:34] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:83)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@78dd667e 
+A[2019-02-07 09:01:34] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:84)] - Oracle JDBC driver
+A[2019-02-07 09:01:34] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:85)] - 11.2.0.1.0
+A[2019-02-07 09:01:34] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:155)] - AR connection success.
+A[2019-02-07 09:01:45] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:185)] - select * from ms_code
+A[2019-02-07 09:01:45] DEBUG [de.simplicit.vjdbc.serial.Zipper.unzip(Zipper.java:62)] - Inflated 3410 to 16088
+A[2019-02-07 09:01:45] DEBUG [de.simplicit.vjdbc.serial.Zipper.unzip(Zipper.java:62)] - Inflated 2739 to 14107
+A[2019-02-07 09:01:45] DEBUG [de.simplicit.vjdbc.serial.Zipper.unzip(Zipper.java:62)] - Inflated 2794 to 14823
+A[2019-02-07 09:01:45] DEBUG [de.simplicit.vjdbc.serial.Zipper.unzip(Zipper.java:62)] - Inflated 4134 to 16175
+A[2019-02-07 09:01:45] DEBUG [de.simplicit.vjdbc.serial.Zipper.unzip(Zipper.java:62)] - Inflated 3092 to 15319
+A[2019-02-07 09:01:45] DEBUG [de.simplicit.vjdbc.serial.Zipper.unzip(Zipper.java:62)] - Inflated 3105 to 14436
+A[2019-02-07 09:01:45] DEBUG [de.simplicit.vjdbc.serial.Zipper.unzip(Zipper.java:62)] - Inflated 3085 to 14796
+A[2019-02-07 09:01:45] DEBUG [de.simplicit.vjdbc.serial.Zipper.unzip(Zipper.java:62)] - Inflated 2497 to 11050
+A[2019-02-07 09:02:05] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:02:09] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:02:12] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - AR_PWsqlsharp_110
+A[2019-02-07 09:02:18] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:02:22] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - schemaIdsqlsharp
+A[2019-02-07 09:02:25] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - connUsersqltest
+A[2019-02-07 09:02:29] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - proxyNmHYUK
+A[2019-02-07 09:02:33] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - datawareUserIdadmin
+A[2019-02-07 09:02:33] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:02:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:02:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:02:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:02:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:02:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:02:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:02:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:02:33] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:02:33] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:02:33] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:02:43] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.sql.SQLException: Error unmarshaling return; nested exception is: 
+	java.lang.ClassNotFoundException: org.postgresql.util.PSQLException (no security manager: RMI class loader disabled)
+A[2019-02-07 09:02:43] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:02:43] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:02:43] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:02:53] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.sql.SQLException: Error unmarshaling return; nested exception is: 
+	java.lang.ClassNotFoundException: org.postgresql.util.PSQLException (no security manager: RMI class loader disabled)
+A[2019-02-07 09:02:53] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:02:53] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:02:53] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:03:03] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.sql.SQLException: Error unmarshaling return; nested exception is: 
+	java.lang.ClassNotFoundException: org.postgresql.util.PSQLException (no security manager: RMI class loader disabled)
+A[2019-02-07 09:03:15] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:43)] - Exiting application.
+A[2019-02-07 09:12:09] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 09:12:49] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:12:52] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:12:55] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - AR_PWsqlsharp_110
+A[2019-02-07 09:12:58] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:13:00] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - schemaIdsqlsharp
+A[2019-02-07 09:13:03] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - connUsersqltest
+A[2019-02-07 09:13:06] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - proxyNmHYUK
+A[2019-02-07 09:13:08] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:237)] - datawareUserIdadmin
+A[2019-02-07 09:13:08] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:13:08] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:13:08] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:13:08] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:13:09] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:13:09] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:13:09] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:13:09] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:13:09] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 09:13:09] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 09:13:09] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:13:09] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:13:09] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:14:20] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:83)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@1d76aeea 
+A[2019-02-07 09:17:47] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 09:17:55] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:17:57] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:18:00] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_PWsqlsharp_110
+A[2019-02-07 09:18:04] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:18:08] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - schemaIdsqlsharp
+A[2019-02-07 09:18:11] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - connUsersqltest
+A[2019-02-07 09:18:15] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - proxyNmHYUK
+A[2019-02-07 09:18:18] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - datawareUserIdadmin
+A[2019-02-07 09:18:18] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:18:18] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:18:18] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:18:18] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:18:18] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:18:19] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:18:19] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:18:19] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:18:19] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 09:18:19] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 09:18:19] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:18:19] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:18:19] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:18:37] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.sql.SQLException: Error unmarshaling return header; nested exception is: 
+	java.net.SocketException: Connection reset
+A[2019-02-07 09:18:37] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:18:37] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:18:38] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+A[2019-02-07 09:19:04] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 09:19:09] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:19:14] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:19:17] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_PWsqlsharp_110
+A[2019-02-07 09:19:20] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:19:23] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - schemaIdsqlsharp
+A[2019-02-07 09:19:25] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - connUsersqltest
+A[2019-02-07 09:19:29] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - proxyNmHYUK
+A[2019-02-07 09:19:31] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - datawareUserIdadmin
+A[2019-02-07 09:19:31] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:19:31] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:19:31] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:19:31] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:19:32] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:19:32] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:19:32] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:19:32] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:19:32] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 09:19:32] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 09:19:32] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:19:32] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:19:32] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:19:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:83)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@1d76aeea 
+A[2019-02-07 09:19:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:84)] - PostgreSQL JDBC Driver
+A[2019-02-07 09:19:33] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:85)] - 42.2.3.jre7
+A[2019-02-07 09:19:33] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:26:45] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from information_schema
+A[2019-02-07 09:26:47] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:37)] - Exiting application.
+A[2019-02-07 09:26:58] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 09:32:58] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:33:01] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:33:07] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_PWsqlsharp_110
+A[2019-02-07 09:33:17] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:33:20] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - schemaIdsqlsharp
+A[2019-02-07 09:33:23] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - connUsersqltest
+A[2019-02-07 09:33:25] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - proxyNmHYUK
+A[2019-02-07 09:33:28] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - datawareUserIdadmin
+A[2019-02-07 09:33:28] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:33:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:33:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:33:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:33:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:33:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:33:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:33:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:33:29] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 09:33:29] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 09:33:29] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:33:29] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:33:29] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:33:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:83)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@1d76aeea 
+A[2019-02-07 09:33:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:84)] - PostgreSQL JDBC Driver
+A[2019-02-07 09:33:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:85)] - 42.2.3.jre7
+A[2019-02-07 09:33:29] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:33:43] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from sqlsharp.public.testwk
+A[2019-02-07 09:33:45] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:37)] - Exiting application.
+A[2019-02-07 09:34:00] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 09:34:04] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:34:07] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:34:11] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_PWsqlsharp_110
+A[2019-02-07 09:34:14] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:34:17] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - schemaIdsqlsharp
+A[2019-02-07 09:34:20] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - connUsersqltest
+A[2019-02-07 09:34:24] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - proxyNmHYUK
+A[2019-02-07 09:34:28] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - datawareUserIdadmin
+A[2019-02-07 09:34:28] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:34:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:34:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:34:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:34:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:34:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:34:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:34:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:34:29] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 09:34:29] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 09:34:29] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:34:29] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:34:29] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:34:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:83)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@1d76aeea 
+A[2019-02-07 09:34:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:84)] - PostgreSQL JDBC Driver
+A[2019-02-07 09:34:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:85)] - 42.2.3.jre7
+A[2019-02-07 09:34:29] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:34:35] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from sqlsharp.public.testwk
+A[2019-02-07 09:34:38] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:35:08] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from public.testwk
+A[2019-02-07 09:35:10] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:35:24] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from TESTWK
+A[2019-02-07 09:35:32] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:35:39] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from testWK
+A[2019-02-07 09:35:41] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:36:27] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from public
+A[2019-02-07 09:36:28] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:36:36] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:36:39] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:36:42] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_PWsqlsharp_110
+A[2019-02-07 09:36:44] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:36:47] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - schemaIdsqlsharp
+A[2019-02-07 09:36:49] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - connUsersqltest
+A[2019-02-07 09:36:52] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - proxyNmHYUK
+A[2019-02-07 09:36:55] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - datawareUserIdadmin
+A[2019-02-07 09:36:55] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:36:55] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:36:55] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:36:55] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:36:55] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:36:55] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:36:55] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:36:55] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:36:55] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:36:55] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:36:55] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:36:55] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:83)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@6973bf95 
+A[2019-02-07 09:36:55] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:84)] - PostgreSQL JDBC Driver
+A[2019-02-07 09:36:55] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:85)] - 42.2.3.jre7
+A[2019-02-07 09:36:55] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:37:04] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from testWK
+A[2019-02-07 09:37:06] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:37)] - Exiting application.
+A[2019-02-07 09:37:47] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 09:37:49] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:37:53] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:37:57] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_PWsqlsharp_110
+A[2019-02-07 09:38:00] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:38:03] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - schemaIdsqlsharp
+A[2019-02-07 09:38:06] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - connUsersqltest
+A[2019-02-07 09:38:09] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - proxyNmHYUK
+A[2019-02-07 09:38:12] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - datawareUserIdadmin
+A[2019-02-07 09:38:12] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:38:12] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:38:12] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:38:13] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:38:13] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:38:13] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:38:13] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:38:13] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:38:13] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 09:38:13] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 09:38:13] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:38:13] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:38:14] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:38:14] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:83)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@1d76aeea 
+A[2019-02-07 09:38:14] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:84)] - PostgreSQL JDBC Driver
+A[2019-02-07 09:38:14] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:85)] - 42.2.3.jre7
+A[2019-02-07 09:38:14] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:38:21] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from testkk
+A[2019-02-07 09:38:23] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:39:31] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from postgres.public.test_table
+A[2019-02-07 09:39:32] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:37)] - Exiting application.
+A[2019-02-07 09:39:47] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 09:39:52] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:39:54] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:39:57] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_PWsqlsharp_110
+A[2019-02-07 09:39:59] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:40:02] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - schemaIdsqlsharp
+A[2019-02-07 09:40:04] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - connUsersqltest
+A[2019-02-07 09:40:07] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - proxyNmHYUK
+A[2019-02-07 09:40:09] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - datawareUserIdadmin
+A[2019-02-07 09:40:09] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:40:10] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:40:10] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:40:10] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:40:10] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:40:10] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:40:10] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:40:10] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:40:10] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 09:40:10] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 09:40:10] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:40:10] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:40:11] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 09:40:11] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:83)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@1d76aeea 
+A[2019-02-07 09:40:11] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:84)] - PostgreSQL JDBC Driver
+A[2019-02-07 09:40:11] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:85)] - 42.2.3.jre7
+A[2019-02-07 09:40:11] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:40:48] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from testkk
+A[2019-02-07 09:40:51] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:40:58] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - select * from TESTKK
+A[2019-02-07 09:41:59] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:154)] - AR connection success.
+A[2019-02-07 09:42:11] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:184)] - SELECT * FROM SQLSHARP.PUBLIC.TESTKK
+A[2019-02-07 09:42:13] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:37)] - Exiting application.
+A[2019-02-07 09:44:17] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 09:44:21] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:44:24] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:44:27] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_PWsqlsharp_110
+A[2019-02-07 09:44:30] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:44:33] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - schemaIdsqlsharp
+A[2019-02-07 09:44:36] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - connUsersqltest
+A[2019-02-07 09:44:39] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - proxyNmHYUK
+A[2019-02-07 09:44:42] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - datawareUserIdadmin
+A[2019-02-07 09:44:42] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:44:42] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:44:42] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:44:42] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:44:43] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:44:43] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:44:43] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:44:43] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:44:43] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 09:44:43] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 09:44:43] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:44:43] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:44:44] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+A[2019-02-07 09:44:44] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:44:44] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:44:45] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+A[2019-02-07 09:44:49] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:37)] - Exiting application.
+A[2019-02-07 09:45:00] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 09:45:07] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - url192.168.1.32:1521:orcl
+A[2019-02-07 09:45:09] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_IDSQLSHARP_110
+A[2019-02-07 09:45:12] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - AR_PWsqlsharp_110
+A[2019-02-07 09:45:15] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 09:45:18] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - schemaIdsqlsharp
+A[2019-02-07 09:45:23] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - connUsersqltest
+A[2019-02-07 09:45:26] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - proxyNmHYUK
+A[2019-02-07 09:45:29] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:236)] - datawareUserIdadmin
+A[2019-02-07 09:45:29] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 09:45:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 09:45:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 09:45:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - make connection instance 
+A[2019-02-07 09:45:29] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:182)] - SVR ID: 0003 
+A[2019-02-07 09:45:30] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:209)] - Registry Port: 2011 
+A[2019-02-07 09:45:30] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:210)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 09:45:30] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:63)] - connect start 
+A[2019-02-07 09:45:30] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 09:45:30] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 09:45:30] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:45:30] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:45:31] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+A[2019-02-07 09:45:31] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 09:45:31] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 09:45:32] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+A[2019-02-07 09:45:34] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:37)] - Exiting application.
+A[2019-02-07 10:08:06] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 10:08:06] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:38)] - Exiting application.
+A[2019-02-07 10:08:18] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 10:08:18] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:38)] - Exiting application.
+A[2019-02-07 10:10:15] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:27)] - JDBC Proxy start
+A[2019-02-07 10:10:17] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:223)] - url
+A[2019-02-07 10:10:17] DEBUG [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:227)] - url is empty.
+A[2019-02-07 10:10:23] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:223)] - urla
+A[2019-02-07 10:10:25] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:223)] - AR_ID
+A[2019-02-07 10:10:25] DEBUG [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:227)] - AR_ID is empty.
+A[2019-02-07 10:10:26] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:223)] - AR_ID
+A[2019-02-07 10:10:26] DEBUG [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:227)] - AR_ID is empty.
+A[2019-02-07 10:10:29] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:223)] - AR_IDexit
+A[2019-02-07 10:10:29] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:38)] - Exiting application.
+A[2019-02-07 10:57:43] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:28)] - JDBC Proxy start
+A[2019-02-07 10:57:43] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:29)] - JDBC Proxy start
+A[2019-02-07 10:57:54] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:28)] - JDBC Proxy start
+A[2019-02-07 10:57:54] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:29)] - JDBC Proxy start
+A[2019-02-07 10:58:01] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:28)] - JDBC Proxy start
+A[2019-02-07 10:58:01] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:29)] - JDBC Proxy start
+A[2019-02-07 10:58:12] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:28)] - JDBC Proxy start
+A[2019-02-07 10:58:12] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:29)] - JDBC Proxy start
+A[2019-02-07 10:58:15] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:28)] - JDBC Proxy start
+A[2019-02-07 10:58:15] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:29)] - JDBC Proxy start
+A[2019-02-07 11:04:28] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:28)] - JDBC Proxy start
+A[2019-02-07 11:04:28] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:29)] - JDBC Proxy start
+A[2019-02-07 11:04:34] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - url192.168.1.32:1521:orcl
+A[2019-02-07 11:04:34] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - url192.168.1.32:1521:orcl
+A[2019-02-07 11:04:38] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - AR_IDSQLSHARP_110
+A[2019-02-07 11:04:38] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - AR_IDSQLSHARP_110
+A[2019-02-07 11:04:42] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - AR_PWsqlsharp_110
+A[2019-02-07 11:04:42] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - AR_PWsqlsharp_110
+A[2019-02-07 11:04:45] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 11:04:45] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 11:04:49] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - schemaIdsqlsharp
+A[2019-02-07 11:04:49] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - schemaIdsqlsharp
+A[2019-02-07 11:04:52] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - connUsersqltest
+A[2019-02-07 11:04:52] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - connUsersqltest
+A[2019-02-07 11:04:55] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - proxyNmHYUK
+A[2019-02-07 11:04:55] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - proxyNmHYUK
+A[2019-02-07 11:04:58] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - datawareUserIdadmin
+A[2019-02-07 11:04:58] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - datawareUserIdadmin
+A[2019-02-07 11:04:58] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:94)] - Start connect to AR
+A[2019-02-07 11:04:58] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 11:04:58] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:126)] - connect AR 
+A[2019-02-07 11:04:58] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 11:04:58] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 11:04:58] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:147)] - Search oracle driver 
+A[2019-02-07 11:04:59] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:154)] - make connection instance 
+A[2019-02-07 11:04:59] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:155)] - make connection instance 
+A[2019-02-07 11:04:59] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:183)] - SVR ID: 0003 
+A[2019-02-07 11:04:59] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:184)] - SVR ID: 0003 
+A[2019-02-07 11:04:59] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:214)] - Registry Port: 2011 
+A[2019-02-07 11:04:59] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:215)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 11:04:59] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:216)] - Registry Port: 2011 
+A[2019-02-07 11:04:59] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:217)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 11:04:59] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:53)] - connect start 
+A[2019-02-07 11:04:59] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:54)] - connect start 
+A[2019-02-07 11:04:59] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 11:04:59] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 11:04:59] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 11:04:59] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 11:05:00] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+A[2019-02-07 11:05:00] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 11:05:00] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 11:05:01] ERROR [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:150)] - java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+A[2019-02-07 11:05:05] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:40)] - Exiting application.
+A[2019-02-07 11:05:05] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:41)] - Exiting application.
+A[2019-02-07 11:05:15] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:28)] - JDBC Proxy start
+A[2019-02-07 11:05:15] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:29)] - JDBC Proxy start
+A[2019-02-07 11:05:18] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - url192.168.1.32:1521:orcl
+A[2019-02-07 11:05:18] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - url192.168.1.32:1521:orcl
+A[2019-02-07 11:05:20] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - AR_IDSQLSHARP_110
+A[2019-02-07 11:05:20] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - AR_IDSQLSHARP_110
+A[2019-02-07 11:05:23] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - AR_PWsqlsharp_110
+A[2019-02-07 11:05:23] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - AR_PWsqlsharp_110
+A[2019-02-07 11:05:26] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 11:05:26] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - serverNamePOSTGRESQL_SQLSHARP
+A[2019-02-07 11:05:29] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - schemaIdsqlsharp
+A[2019-02-07 11:05:29] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - schemaIdsqlsharp
+A[2019-02-07 11:05:32] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - connUsersqltest
+A[2019-02-07 11:05:32] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - connUsersqltest
+A[2019-02-07 11:05:35] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - proxyNmHYUK
+A[2019-02-07 11:05:35] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - proxyNmHYUK
+A[2019-02-07 11:05:38] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:229)] - datawareUserIdadmin
+A[2019-02-07 11:05:38] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:230)] - datawareUserIdadmin
+A[2019-02-07 11:05:38] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:94)] - Start connect to AR
+A[2019-02-07 11:05:38] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 11:05:38] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:126)] - connect AR 
+A[2019-02-07 11:05:38] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:127)] - connect AR 
+A[2019-02-07 11:05:38] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:146)] - Search oracle driver 
+A[2019-02-07 11:05:38] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:147)] - Search oracle driver 
+A[2019-02-07 11:05:38] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:154)] - make connection instance 
+A[2019-02-07 11:05:38] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:155)] - make connection instance 
+A[2019-02-07 11:05:39] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:183)] - SVR ID: 0003 
+A[2019-02-07 11:05:39] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:184)] - SVR ID: 0003 
+A[2019-02-07 11:05:39] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:214)] - Registry Port: 2011 
+A[2019-02-07 11:05:39] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:215)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 11:05:39] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:216)] - Registry Port: 2011 
+A[2019-02-07 11:05:39] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:217)] - Password: VIsPzkF6UIAfo/Jm7h5STw==
+A[2019-02-07 11:05:39] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:53)] - connect start 
+A[2019-02-07 11:05:39] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:54)] - connect start 
+A[2019-02-07 11:05:39] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 11:05:39] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 11:05:39] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0003
+A[2019-02-07 11:05:39] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 11:05:39] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0003
+A[2019-02-07 11:05:40] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:67)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@197d671 
+A[2019-02-07 11:05:40] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:68)] - PostgreSQL JDBC Driver
+A[2019-02-07 11:05:40] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:69)] - 42.2.3.jre7
+A[2019-02-07 11:05:40] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:71)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@197d671 
+A[2019-02-07 11:05:40] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:72)] - PostgreSQL JDBC Driver
+A[2019-02-07 11:05:40] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:73)] - 42.2.3.jre7
+A[2019-02-07 11:05:40] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:158)] - AR connection success.
+A[2019-02-07 11:05:40] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:159)] - AR connection success.
+A[2019-02-07 11:06:05] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:191)] - select * from test
+A[2019-02-07 11:06:05] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:192)] - select * from test
+A[2019-02-07 11:06:07] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:158)] - AR connection success.
+A[2019-02-07 11:06:07] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:159)] - AR connection success.
+A[2019-02-07 11:07:47] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:191)] - select * from public.test
+A[2019-02-07 11:07:47] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:192)] - select * from public.test
+A[2019-02-07 11:07:48] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:40)] - Exiting application.
+A[2019-02-07 11:07:48] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:41)] - Exiting application.
+A[2019-02-07 14:30:41] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:30)] - JDBC Proxy start
+A[2019-02-07 14:30:41] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:31)] - JDBC Proxy start
+A[2019-02-07 14:30:59] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:231)] - url192.168.1.32:1521:orcl
+A[2019-02-07 14:30:59] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:232)] - url192.168.1.32:1521:orcl
+A[2019-02-07 14:31:06] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:30)] - JDBC Proxy start
+A[2019-02-07 14:31:06] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:31)] - JDBC Proxy start
+A[2019-02-07 14:31:08] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:231)] - url192.168.1.32:1521:orcl
+A[2019-02-07 14:31:08] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:232)] - url192.168.1.32:1521:orcl
+A[2019-02-07 14:31:10] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:231)] - AR_IDSQLSHARP_110
+A[2019-02-07 14:31:10] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:232)] - AR_IDSQLSHARP_110
+A[2019-02-07 14:31:13] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:231)] - AR_PWsqlsharp_110
+A[2019-02-07 14:31:13] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:232)] - AR_PWsqlsharp_110
+A[2019-02-07 14:31:15] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:231)] - serverNamesqlsharp
+A[2019-02-07 14:31:15] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:232)] - serverNamesqlsharp
+A[2019-02-07 14:31:18] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:231)] - schemaIdSQLSHARP_110
+A[2019-02-07 14:31:18] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:232)] - schemaIdSQLSHARP_110
+A[2019-02-07 14:31:21] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:231)] - connUserSQLSHARP_110
+A[2019-02-07 14:31:21] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:232)] - connUserSQLSHARP_110
+A[2019-02-07 14:31:23] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:231)] - proxyNmHYUK
+A[2019-02-07 14:31:23] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:232)] - proxyNmHYUK
+A[2019-02-07 14:31:25] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:231)] - datawareUserIdadmin
+A[2019-02-07 14:31:25] INFO  [userstatemachine.UserstateMachine.getUserInfo(UserstateMachine.java:232)] - datawareUserIdadmin
+A[2019-02-07 14:31:25] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:94)] - Start connect to AR
+A[2019-02-07 14:31:25] INFO  [userstatemachine.UserstateMachine.stateMachine(UserstateMachine.java:95)] - Start connect to AR
+A[2019-02-07 14:31:25] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:132)] - connect AR 
+A[2019-02-07 14:31:25] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:133)] - connect AR 
+A[2019-02-07 14:31:25] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:152)] - Search oracle driver 
+A[2019-02-07 14:31:25] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:153)] - Search oracle driver 
+A[2019-02-07 14:31:25] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:160)] - make connection instance 
+A[2019-02-07 14:31:25] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:161)] - make connection instance 
+A[2019-02-07 14:31:25] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:189)] - SVR ID: 0001 
+A[2019-02-07 14:31:25] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:190)] - SVR ID: 0001 
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:220)] - Registry Port: 2011 
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:221)] - Password: PTLH9q/iwsVpQihx7RlUXA==
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:222)] - Registry Port: 2011 
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectAR(JdbcProxyHandler.java:223)] - Password: PTLH9q/iwsVpQihx7RlUXA==
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:53)] - connect start 
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:54)] - connect start 
+A[2019-02-07 14:31:26] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:64)] - Virtual JDBC-Driver successfully registered
+A[2019-02-07 14:31:26] INFO  [de.simplicit.vjdbc.VirtualDriver.<clinit>(VirtualDriver.java:70)] - Couldn't load HSQL-Driver, caching deactivated
+A[2019-02-07 14:31:26] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:90)] - VJdbc-URL: rmi://localhost:2011/HYUK,0001
+A[2019-02-07 14:31:26] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:105)] - VJdbc in RMI-Mode, using object //localhost:2011/HYUK
+A[2019-02-07 14:31:26] INFO  [de.simplicit.vjdbc.VirtualDriver.connect(VirtualDriver.java:124)] - Connecting to datasource 0001
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:67)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@197d671 
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:68)] - Oracle JDBC driver
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:69)] - 11.2.0.1.0
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:71)] - de.simplicit.vjdbc.VirtualDatabaseMetaData@197d671 
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:72)] - Oracle JDBC driver
+A[2019-02-07 14:31:26] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connect(JdbcProxyHandler.java:73)] - 11.2.0.1.0
+A[2019-02-07 14:31:26] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:158)] - AR connection success.
+A[2019-02-07 14:31:26] INFO  [userstatemachine.UserstateMachine.getQuery(UserstateMachine.java:159)] - AR connection success.
+A[2019-02-07 14:31:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectionClose(JdbcProxyHandler.java:119)] - connection close
+A[2019-02-07 14:31:28] INFO  [com.encore.jdbcproxy.db.proxyhandler.JdbcProxyHandler.connectionClose(JdbcProxyHandler.java:120)] - connection close
+A[2019-02-07 14:31:37] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:30)] - JDBC Proxy start
+A[2019-02-07 14:31:37] INFO  [JdbcProxyMain.main(JdbcProxyMain.java:31)] - JDBC Proxy start

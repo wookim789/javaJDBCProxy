@@ -11,7 +11,7 @@ public class OracleQuery {
 		
 	}
 	//SVR_ID를 가져오는 쿼리문
-	private final static String SVR_ID = " SELECT SVR_ID " + 
+	private final static String SVR_ID = " SELECT DISTINCT SVR_ID " + 
 										 " FROM MD_SVR " +
 										 " WHERE SVR_NM = ?";
 	//REGISTRY_PORT, 암호화된 PASSWORD 가져오기
